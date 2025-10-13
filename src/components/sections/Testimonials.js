@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import ParallaxSection from '../ui/ParallaxSection';
 
 const Testimonials = () => {
   const [rotation, setRotation] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [animationDirection, setAnimationDirection] = useState('forward'); // 'forward' or 'reverse'
   
   const testimonials = [
     {
@@ -37,13 +39,15 @@ const Testimonials = () => {
     if (isPaused) return; // Don't rotate if paused
 
     const interval = setInterval(() => {
+      setAnimationDirection('forward');
       setIsAnimating(true);
+      
+      // Wait for animation to complete before updating rotation
       setTimeout(() => {
         setRotation((prev) => (prev + 1) % testimonials.length);
-      }, 800); // Wait for animation to complete
-      setTimeout(() => {
+        // Remove animating class immediately after rotation update
         setIsAnimating(false);
-      }, 850);
+      }, 800); // Match animation duration exactly
     }, 3000); // Rotate every 3 seconds
 
     return () => clearInterval(interval);
@@ -52,24 +56,24 @@ const Testimonials = () => {
   // Manual navigation functions
   const handleNext = () => {
     if (isAnimating) return;
+    setAnimationDirection('forward');
     setIsAnimating(true);
+    
     setTimeout(() => {
       setRotation((prev) => (prev + 1) % testimonials.length);
-    }, 800);
-    setTimeout(() => {
       setIsAnimating(false);
-    }, 850);
+    }, 800);
   };
 
   const handlePrev = () => {
     if (isAnimating) return;
+    setAnimationDirection('reverse');
     setIsAnimating(true);
+    
     setTimeout(() => {
       setRotation((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-    }, 800);
-    setTimeout(() => {
       setIsAnimating(false);
-    }, 850);
+    }, 800);
   };
 
   // Pause/resume on hover
@@ -96,21 +100,21 @@ const Testimonials = () => {
   const displayTestimonials = [...rotatedTestimonials, ...rotatedTestimonials];
 
   return (
-    <section id="testimonials" className="testimonials">
+    <section id="testimonials" className="testimonials reveal-on-scroll">
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title testimonials-title">What our clients say</h2>
-          <p className="section-subtitle">
+        <ParallaxSection speed={0.25} direction="up" className="section-header reveal-on-scroll">
+          <h2 className="section-title testimonials-title reveal-on-scroll">What our clients say</h2>
+          <p className="section-subtitle reveal-on-scroll">
             Rmet facilisi arcu odio urna aenean erat. Pellentesque in vitae lobortis orci tincidunt facilisis. Pulvinar lacus ultricies turpis urna sapien.
           </p>
-        </div>
+        </ParallaxSection>
         
         <div className="testimonials-container">
-          <div className={`testimonials-grid ${isAnimating ? 'animating' : ''}`}>
+          <div className={`testimonials-grid ${isAnimating ? (animationDirection === 'reverse' ? 'animating-reverse' : 'animating') : ''}`}>
             {displayTestimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.id}-${index}`}
-                className="testimonial-card"
+                className="testimonial-card reveal-on-scroll"
                 style={{ 
                   '--gradient': testimonial.gradient,
                   '--card-index': index

@@ -63,7 +63,7 @@ const Services = () => {
       <section className="services">
         <div className="container">
           <div className="section-header">
-            <p className="section-badge">OUR SERVICES</p>
+            <p className="section-badge reveal-on-scroll">OUR SERVICES</p>
             <h2 className="section-title">How We Can Help You</h2>
             <p className="section-subtitle">
               We welcome opportunities to work alongside different teams over projects of any complexity

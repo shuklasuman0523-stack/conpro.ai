@@ -1,4 +1,5 @@
 import React from 'react';
+import GlitchText from '../ui/GlitchText';
 import aiCircleIcon from '../../assets/icons/ai-circle.svg';
 import networkIcon from '../../assets/icons/network.svg';
 import dashboardIcon from '../../assets/icons/dashboard.svg';
@@ -47,11 +48,14 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="services">
+    <section id="services" className="services reveal-on-scroll">
       <div className="container">
-        <div className="section-header">
-          <p className="section-category">OUR SERVICES</p>
-          <h2 className="section-title help-title">How We Can Help You</h2>
+        <div className="section-header reveal-on-scroll">
+          <p className="section-category reveal-on-scroll">OUR SERVICES</p>
+          <GlitchText 
+            text="How We Can Help You"
+            className="section-title help-title"
+          />
           <p className="section-subtitle">
             We welcome opportunities to work alongside different teams over projects of any complexity
           </p>
@@ -59,7 +63,7 @@ const Services = () => {
         
         <div className="services-grid">
           {services.map((service, index) => (
-            <div key={index} className={`service-card service-${service.color}`}>
+            <div key={index} className={`service-card service-${service.color} reveal-on-scroll`}>
               <div className="service-header">
                 <div className="service-icon">
                   <img src={service.icon} alt={service.title} className="icon" />

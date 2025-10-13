@@ -1,4 +1,5 @@
 import React from 'react';
+import ParallaxSection from '../components/ui/ParallaxSection';
 import {
   Hero,
   CompanyLogos,
@@ -61,14 +62,14 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer className="footer reveal-on-scroll">
         <div className="container">
           <div className="footer-content">
-            <div className="footer-brand">
-              <div className="footer-logo-container">
+            <ParallaxSection speed={0.1} direction="up" className="footer-brand">
+              <div className="footer-logo-container reveal-on-scroll">
                 <span className="footer-logo">ConPro</span><span className="footer-logo-accent">.AI</span>
               </div>
-              <div className="footer-social">
+              <div className="footer-social reveal-on-scroll">
                 <a href="#" className="social-link" aria-label="Facebook">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="currentColor"/>
@@ -85,32 +86,32 @@ const Home = () => {
                   </svg>
                 </a>
               </div>
-            </div>
+            </ParallaxSection>
 
             <div className="footer-links">
-              <div className="footer-section">
-                <h4 className="footer-title">Company</h4>
+              <ParallaxSection speed={0.05} direction="up" className="footer-section">
+                <h4 className="footer-title reveal-on-scroll">Company</h4>
                 <ul className="footer-list">
-                  <li><a href="#" className="footer-link" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>About us</a></li>
-                  <li><a href="#" className="footer-link" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>Contact us</a></li>
-                  <li><a href="#" className="footer-link" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>Careers</a></li>
-                  <li><a href="#" className="footer-link" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>Blogs</a></li>
+                  <li><a href="#" className="footer-link reveal-on-scroll" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>About us</a></li>
+                  <li><a href="#" className="footer-link reveal-on-scroll" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>Contact us</a></li>
+                  <li><a href="#" className="footer-link reveal-on-scroll" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>Careers</a></li>
+                  <li><a href="#" className="footer-link reveal-on-scroll" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>Blogs</a></li>
                 </ul>
-              </div>
+              </ParallaxSection>
 
-              <div className="footer-section">
-                <h4 className="footer-title">Product</h4>
+              <ParallaxSection speed={0.08} direction="up" className="footer-section">
+                <h4 className="footer-title reveal-on-scroll">Product</h4>
                 <ul className="footer-list">
                 </ul>
-              </div>
+              </ParallaxSection>
 
-              <div className="footer-section">
-                <h4 className="footer-title">Legal</h4>
+              <ParallaxSection speed={0.12} direction="up" className="footer-section">
+                <h4 className="footer-title reveal-on-scroll">Legal</h4>
                 <ul className="footer-list">
-                  <li><a href="/privacy" className="footer-link">Privacy Policy</a></li>
-                  <li><a href="/terms" className="footer-link">Terms & Conditions</a></li>
+                  <li><a href="/privacy" className="footer-link reveal-on-scroll">Privacy Policy</a></li>
+                  <li><a href="/terms" className="footer-link reveal-on-scroll">Terms & Conditions</a></li>
                 </ul>
-              </div>
+              </ParallaxSection>
             </div>
           </div>
         </div>

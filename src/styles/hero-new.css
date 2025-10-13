@@ -10,7 +10,41 @@
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
+  /* CSS variables for hero visual effects - NO position changes */
+  --hero-opacity: 1;
+  --hero-translateY: 0px;
+  --hero-scale: 1;
+  --hero-bg-opacity: 1;
+  --hero-blur: 0px;
+  transition: opacity 0.5s ease-out;
+  opacity: var(--hero-bg-opacity, 1);
 }
+
+/* Parallax background layers */
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.parallax-layer { /* No movement - keep in place */
+  transform: translateY(0px);
+}
+.parallax-layer--mid { /* No movement - keep in place */
+  transform: translateY(0px);
+}
+.parallax-layer--front { /* No movement - keep in place */
+  transform: translateY(0px);
+  z-index: 2;
+}
+
+/* Decorative blobs/icons inside parallax layer should be positioned absolutely */
+/* Decorative blob rules removed (no blobs in hero) */
 
 .hero-tailwind::before {
   content: '';
@@ -21,6 +55,8 @@
   bottom: 0;
   background: linear-gradient(to right, #0d0d26, rgba(13, 13, 38, 0.8), transparent);
   z-index: 1;
+  transition: opacity 0.5s ease-out;
+  opacity: var(--hero-bg-opacity, 1);
 }
 
 .hero-container {
@@ -30,6 +66,23 @@
   max-width: 1200px;
   margin: 0;
   padding: 0;
+  /* Apply visual effects only - NO position or scale changes */
+  opacity: var(--hero-opacity, 1);
+  transform: translateY(0px) scale(1); /* Always stay in place */
+  filter: blur(var(--hero-blur, 0px)); /* Add blur effect on scroll */
+  transition: opacity 0.5s ease-out, filter 0.5s ease-out;
+  will-change: opacity, filter;
+}
+
+/* When hero content is vanished, disable pointer events */
+.hero-tailwind.hero-vanished .hero-container {
+  pointer-events: none;
+}
+
+/* Make the overlay more transparent when hero content vanishes so background shows through */
+.hero-tailwind.hero-vanished::before {
+  opacity: 0.3;
+  transition: opacity 0.5s ease-out;
 }
 
 .hero-grid {

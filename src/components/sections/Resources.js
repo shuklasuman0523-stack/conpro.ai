@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import ParallaxSection from '../ui/ParallaxSection';
 
 const Resources = () => {
   const categories = [
@@ -27,7 +28,7 @@ const Resources = () => {
   ];
 
   // Mobile swipe state
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveInidex] = useState(0);
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
 
@@ -52,13 +53,15 @@ const Resources = () => {
 
   // Responsive: show carousel on mobile, grid on desktop
   return (
-    <section className="resources">
+    <section className="resources reveal-on-scroll">
       <div className="container">
         <div className="section-header">
-          <p className="section-category">OUR BLOGS</p>
-          <h2 className="section-title resources-title">Our Useful Resources</h2>
+          <ParallaxSection speed={0.3} direction="up">
+            <p className="section-category reveal-on-scroll">OUR BLOGS</p>
+          </ParallaxSection>
+          <h2 className="section-title resources-title reveal-on-scroll">Our Useful Resources</h2>
         </div>
-        <div className="resource-categories">
+        <div className="resource-categories reveal-on-scroll">
           {categories.map((category, index) => (
             <button key={index} className={`category-btn ${index === 0 ? 'active' : ''}`}>
               {category}
@@ -68,18 +71,20 @@ const Resources = () => {
         {/* Desktop grid */}
         <div className="articles-grid">
           {articles.map((article, index) => (
-            <div key={index} className="article-card">
-              <div className="article-image">
-                <img src={article.image} alt={article.title} />
+            <ParallaxSection key={index} speed={0.1 + (index * 0.05)} direction="up">
+              <div className="article-card reveal-on-scroll">
+                <div className="article-image">
+                  <img src={article.image} alt={article.title} />
+                </div>
+                <div className="article-content">
+                  <h3 className="article-title">{article.title}</h3>
+                  <p className="article-description">{article.description}</p>
+                  <button className="read-more-btn">
+                    READ MORE →
+                  </button>
+                </div>
               </div>
-              <div className="article-content">
-                <h3 className="article-title">{article.title}</h3>
-                <p className="article-description">{article.description}</p>
-                <button className="read-more-btn">
-                  READ MORE →
-                </button>
-              </div>
-            </div>
+            </ParallaxSection>
           ))}
         </div>
         {/* Mobile carousel */}
