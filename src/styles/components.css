@@ -235,6 +235,14 @@
   transform: translateY(0);
 }
 
+/* Scroll Fade Section - Content fades as user scrolls past */
+.scroll-fade-section {
+  opacity: var(--section-opacity, 1);
+  filter: blur(var(--section-blur, 0px));
+  transition: opacity 0.3s ease-out, filter 0.3s ease-out;
+  will-change: opacity, filter;
+}
+
 /* Blog / Article card hover parallax */
 .blog-card {
   position: relative;

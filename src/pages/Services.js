@@ -1,5 +1,6 @@
 import React from 'react';
 import { CompanyLogos, Features, AIExpertise, Stats, Testimonials } from '../components';
+import { ScrollFadeSection } from '../components/ui';
 
 const Services = () => {
   const services = [
@@ -49,18 +50,23 @@ const Services = () => {
 
   return (
     <main className="services-page">
-      <section className="page-hero">
-        <div className="container">
-          <h1 className="section-title">Our Services</h1>
-          <p className="section-subtitle">
-            Comprehensive AI solutions to transform your business operations
-          </p>
-        </div>
-      </section>
+      <ScrollFadeSection>
+        <section className="page-hero">
+          <div className="container">
+            <h1 className="section-title">Our Services</h1>
+            <p className="section-subtitle">
+              Comprehensive AI solutions to transform your business operations
+            </p>
+          </div>
+        </section>
+      </ScrollFadeSection>
 
-      <CompanyLogos />
+      <ScrollFadeSection>
+        <CompanyLogos />
+      </ScrollFadeSection>
 
-      <section className="services">
+      <ScrollFadeSection>
+        <section className="services">
         <div className="container">
           <div className="section-header">
             <p className="section-badge reveal-on-scroll">OUR SERVICES</p>
@@ -91,9 +97,11 @@ const Services = () => {
           </div>
         </div>
       </section>
+      </ScrollFadeSection>
 
       {/* Start Your Journey Section */}
-      <section className="journey-section">
+      <ScrollFadeSection>
+        <section className="journey-section">
         <div className="container">
           <div className="journey-content">
             <div className="journey-background">
@@ -131,11 +139,20 @@ const Services = () => {
           </div>
         </div>
       </section>
+      </ScrollFadeSection>
 
-      <Features />
-      <AIExpertise />
-      <Stats />
-      <Testimonials />
+      <ScrollFadeSection>
+        <Features />
+      </ScrollFadeSection>
+      <ScrollFadeSection>
+        <AIExpertise />
+      </ScrollFadeSection>
+      <ScrollFadeSection>
+        <Stats />
+      </ScrollFadeSection>
+      <ScrollFadeSection>
+        <Testimonials />
+      </ScrollFadeSection>
     </main>
   );
 };
