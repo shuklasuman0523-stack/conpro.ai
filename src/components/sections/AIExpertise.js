@@ -1,5 +1,6 @@
 import React from 'react';
 import ParallaxSection from '../ui/ParallaxSection';
+import ScrollFadeElement from '../ui/ScrollFadeElement';
 import aiNetworkDiagram from '../../assets/images/ai-chatbot-diagram.png';
 
 const AIExpertise = () => {
@@ -23,7 +24,7 @@ const AIExpertise = () => {
               />
             </div>
           </ParallaxSection>
-          <div className="expertise-text">
+          <ScrollFadeElement className="expertise-text">
             <div className="section-header">
               <ParallaxSection speed={0.3} direction="up">
                 <p className="section-category desktop-only reveal-on-scroll">OUR AI EXPERTISE</p>
@@ -42,7 +43,7 @@ const AIExpertise = () => {
                 Learn More
               </button>
             </div>
-          </div>
+          </ScrollFadeElement>
         </div>
       </div>
     </section>

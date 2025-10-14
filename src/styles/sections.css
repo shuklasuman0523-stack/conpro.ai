@@ -600,6 +600,15 @@ stats {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transform: translateX(-150vw);
+  transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-image-container.slide-in-left {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .product-screenshot {
@@ -618,6 +627,16 @@ stats {
 .products-text {
   color: #ffffff;
   text-align: left;
+  opacity: 0;
+  transform: translateX(150vw);
+  transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: 0.15s;
+}
+
+.products-text.slide-in-right {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .section-category {

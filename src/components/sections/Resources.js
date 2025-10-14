@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import ParallaxSection from '../ui/ParallaxSection';
+import ScrollFadeElement from '../ui/ScrollFadeElement';
 
 const Resources = () => {
   const categories = [
@@ -69,7 +70,7 @@ const Resources = () => {
           ))}
         </div>
         {/* Desktop grid */}
-        <div className="articles-grid">
+        <ScrollFadeElement className="articles-grid">
           {articles.map((article, index) => (
             <ParallaxSection key={index} speed={0.1 + (index * 0.05)} direction="up">
               <div className="article-card reveal-on-scroll">
@@ -86,7 +87,7 @@ const Resources = () => {
               </div>
             </ParallaxSection>
           ))}
-        </div>
+        </ScrollFadeElement>
         {/* Mobile carousel */}
         <div className="articles-carousel-grid">
           <div className="articles-carousel">

@@ -1,5 +1,6 @@
 import React from 'react';
 import GlitchText from '../ui/GlitchText';
+import ScrollFadeElement from '../ui/ScrollFadeElement';
 import aiCircleIcon from '../../assets/icons/ai-circle.svg';
 import networkIcon from '../../assets/icons/network.svg';
 import dashboardIcon from '../../assets/icons/dashboard.svg';
@@ -61,7 +62,7 @@ const Services = () => {
           </p>
         </div>
         
-        <div className="services-grid">
+        <ScrollFadeElement className="services-grid">
           {services.map((service, index) => (
             <div key={index} className={`service-card service-${service.color} reveal-on-scroll`}>
               <div className="service-header">
@@ -73,7 +74,7 @@ const Services = () => {
               <p className="service-description">{service.description}</p>
             </div>
           ))}
-        </div>
+        </ScrollFadeElement>
         
         <div className="services-cta">
           <button className="btn btn-outline btn-large">Book a Demo</button>
