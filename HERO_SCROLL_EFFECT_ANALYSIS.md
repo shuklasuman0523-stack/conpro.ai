@@ -685,16 +685,16 @@ const Hero = () => {
     <section 
       id="home" 
       className="hero-tailwind"
-      {% raw %}
-      style={{
-        backgroundImage: `url(${heroAbstractFlow})`,
-      }}
-      {% endraw %}
-
+      // {% raw %}
       // style={{
       //   backgroundImage: `url(${heroAbstractFlow})`,
       // }}
-      ref={rootRef}
+      // {% endraw %}
+
+      // // style={{
+      // //   backgroundImage: `url(${heroAbstractFlow})`,
+      // // }}
+      // ref={rootRef}
     >
       <div className="hero-container">
         <div className="hero-grid">
