@@ -13,7 +13,7 @@
     "ai",
     "conpro",
     "website"
-  ],
+  ], 
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
