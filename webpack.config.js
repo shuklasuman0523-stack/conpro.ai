@@ -6,7 +6,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    clean: true,
     publicPath: '/',
   },
   module: {
@@ -40,6 +39,7 @@ module.exports = {
     }),
   ],
   devServer: {
+    historyApiFallback: true,    
     static: {
       directory: path.join(__dirname, 'public'),
     },
