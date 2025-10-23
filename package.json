@@ -4,17 +4,13 @@
   "description": "ConPro.AI - Modern AI-powered website",
   "main": "src/index.js",
   "scripts": {
-    "ng": "ng",
-    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\" --names \"BACKEND,FRONTEND\" --prefix-colors \"bgBlue.bold,bgMagenta.bold\"",
-    "start:frontend": "ng serve",
-    "start:backend": "cd backend && node server.js",
-    "start:frontend-only": "ng serve",
-    "start:backend-only": "cd backend && node server.js",
-    "build": "ng build",
-    "build:backend": "echo Backend doesn't need build step",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject",
+  "predeploy": "npm run build",
+  "deploy": "react-new-version -d build"
+},
   "keywords": [
     "react",
     "ai",
@@ -29,7 +25,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.9.3"
   },
-  "private": true,
+  
   "devDependencies": {
     "@babel/core": "^7.22.0",
     "@babel/preset-env": "^7.22.0",
