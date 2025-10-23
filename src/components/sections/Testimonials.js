@@ -14,7 +14,7 @@ const Testimonials = () => {
       name: "Cameron Williamson",
       role: "Web Designer",
       image: "https://randomuser.me/api/portraits/men/32.jpg",
-      quote: "Rorem ipsum dolor sit amet consectetur. Ac quam sem mi nibh volutpat enim pellentesque. Proin iaculis nisl et neque sed fermentum sollicitudin lectus.",
+      quote: "ConPro.AI’s agentic chatbot has transformed how we manage patient communication. Our response times dropped by 60%, and patients appreciate the natural, human-like interactions.",
       gradient: "linear-gradient(135deg, #8B5CF6, #3B82F6)"
     },
     {
@@ -22,7 +22,7 @@ const Testimonials = () => {
       name: "Esther Howard",
       role: "Web Developer",
       image: "https://randomuser.me/api/portraits/women/44.jpg",
-      quote: "At viverra enim enim sed turpis orci cursus. Imperdiet eros mauris sed sodales nisl interdum ac. Eu congue quis egestas donec lectus",
+      quote: 'We’ve automated appointment scheduling and follow-ups without compromising the personal touch. The system adapts to each patient’s needs — it’s like having an extra team member who never sleeps.',
       gradient: "linear-gradient(135deg, #3B82F6, #06B6D4)"
     },
     {
@@ -30,7 +30,7 @@ const Testimonials = () => {
       name: "Jenny Wilson",
       role: "UI/UX Designer",
       image: "https://randomuser.me/api/portraits/women/68.jpg",
-      quote: "Sed ut diam amet accumsan in. Elementum lorem aliquam venenatis amet sit posuere sed sit. Aliquet suspendisse vitae placerat donec.",
+      quote: "Their AI solution integrates seamlessly with our EHR and support systems. It not only handles queries but also prioritizes critical cases automatically — saving our staff countless hours.",
       gradient: "linear-gradient(135deg, #06B6D4, #10B981)"
     }
   ];
@@ -105,9 +105,9 @@ const Testimonials = () => {
       <div className="container">
         <ParallaxSection speed={0.25} direction="up" className="section-header reveal-on-scroll">
           <h2 className="section-title testimonials-title reveal-on-scroll">What our clients say</h2>
-          <p className="section-subtitle reveal-on-scroll">
+          {/* <p className="section-subtitle reveal-on-scroll">
             Rmet facilisi arcu odio urna aenean erat. Pellentesque in vitae lobortis orci tincidunt facilisis. Pulvinar lacus ultricies turpis urna sapien.
-          </p>
+          </p> */}
         </ParallaxSection>
         
         <div className="testimonials-container">

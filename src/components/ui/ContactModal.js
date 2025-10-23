@@ -23,9 +23,9 @@ const ContactModal = ({ isOpen, onClose }) => {
 
     // EmailJS configuration
     // Replace these with your actual EmailJS credentials
-    const serviceID = 'YOUR_SERVICE_ID';
-    const templateID = 'YOUR_TEMPLATE_ID';
-    const userID = 'YOUR_USER_ID';
+    const serviceID = 'service_nvl7gdy';
+    const templateID = 'template_r425m17';
+    const userID = 'p-cTMC_sPM8oaWMnZ';
 
     emailjs.send(serviceID, templateID, formData, userID)
       .then((response) => {

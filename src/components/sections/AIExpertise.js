@@ -30,11 +30,13 @@ const AIExpertise = () => {
                 <p className="section-category desktop-only reveal-on-scroll">OUR AI EXPERTISE</p>
               </ParallaxSection>
               <h2 className="section-title ai-expertise-title reveal-on-scroll">
-                customer service interactions<br />
+                Customer service interactions<br />
                 were responded to by chatbots
               </h2>
               <p className="section-description reveal-on-scroll">
-                Rorem ipsum dolor sit amet consectetur. Ac quam sem mi nibh volutpat enim pellentesque. Proin iaculis nisl et neque sed fermentum sollicitudin lectus. Rorem ipsum dolor sit amet consectetur. Ac quam sem mi nibh volutpat enim pellentesque. Proin iaculis nisl et neque sed fermentum sollicitudin lectus.
+              Agentic AI chatbots intelligently handle patient inquiries, appointment scheduling, and routine follow-ups with natural, context-aware communication.
+              They go beyond scripted replies — understanding intent, adapting to medical terminology, and autonomously taking actions such as confirming visits or escalating urgent cases to staff.
+              This ensures faster response times, reduced administrative load, and a more personalized patient experience.
               </p>
               <button className="btn btn-outline btn-large learn-more-btn reveal-on-scroll" onClick={() => {
                 const event = new CustomEvent('openContactModal');
