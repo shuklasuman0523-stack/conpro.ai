@@ -1,12 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as HashRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components';
 import { Home, About, Services, Products, Testimonials } from './pages';
 import './styles/index.css';
+import { HashRouter } from 'react-router-dom';
+
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <div className="App">
         <Layout>
           <Routes>
@@ -18,7 +20,7 @@ function App() {
           </Routes>
         </Layout>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 

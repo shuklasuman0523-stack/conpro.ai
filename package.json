@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "ConPro.AI - Modern AI-powered website",
   "main": "src/index.js",
+  "homepage": "https://shuklasuman0523-stack.github.io/conpro.ai",
+  "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -11,7 +13,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://shuklasuman0523-stack.github.io/conpro.ai",
   "keywords": [
     "react",
     "ai",
