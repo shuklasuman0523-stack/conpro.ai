@@ -108,10 +108,10 @@ const Home = () => {
               <ParallaxSection speed={0.08} direction="up" className="footer-section">
                 <h4 className="footer-title reveal-on-scroll">Product</h4>
                 <ul className="footer-list">
-                  <li><a href="" className="footer-link reveal-on-scroll" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>BI and Big Data</a></li>
-                  <li><a href="#" className="footer-link reveal-on-scroll" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>Data Science and AI Solutions</a></li>
-                  <li><a href="#" className="footer-link reveal-on-scroll" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>ML Consulting & Data Strategy</a></li>
-                  <li><a href="#" className="footer-link reveal-on-scroll" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>All Case Studies</a></li>
+                  <li><a href="/services" className="footer-link reveal-on-scroll">BI and Big Data</a></li>
+                  <li><a href="/services" className="footer-link reveal-on-scroll">Data Science and AI Solutions</a></li>
+                  <li><a href="/services" className="footer-link reveal-on-scroll">ML Consulting & Data Strategy</a></li>
+                  <li><a href="/services" className="footer-link reveal-on-scroll">All Case Studies</a></li>
                 </ul>
               </ParallaxSection>
 
