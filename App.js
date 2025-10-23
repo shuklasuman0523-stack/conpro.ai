@@ -1,12 +1,12 @@
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components';
 import { Home, About, Services, Products, Testimonials } from './pages';
 import './styles/index.css';
 
 function App() {
   return (
-    <HashRouter>
+    <Router>
       <div className="App">
         <Layout>
           <Routes>
@@ -18,7 +18,7 @@ function App() {
           </Routes>
         </Layout>
       </div>
-    </HashRouter>
+    </Router>
   );
 }
 
