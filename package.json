@@ -9,7 +9,7 @@
     "vercel-build": "npm run build",
     "dev": "webpack serve --mode development",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "main -d build"
   },
   "homepage": "https://shuklasuman0523-stack.github.io/conpro.ai",
   "keywords": [
