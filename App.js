@@ -1,10 +1,8 @@
 import React from 'react';
-import { BrowserRouter as HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components';
 import { Home, About, Services, Products, Testimonials } from './pages';
 import './styles/index.css';
-import { HashRouter } from 'react-router-dom';
-
 
 function App() {
   return (
