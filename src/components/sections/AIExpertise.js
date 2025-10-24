@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import ParallaxSection from '../ui/ParallaxSection';
 import ScrollFadeElement from '../ui/ScrollFadeElement';
 import aiNetworkDiagram from '../../assets/images/ai-chatbot-diagram.png';
 
 const AIExpertise = () => {
+  const navigate = useNavigate();
   return (
     <section className="ai-expertise reveal-on-scroll">
       <div className="container">
@@ -36,10 +38,19 @@ const AIExpertise = () => {
               <p className="section-description reveal-on-scroll">
                 Rorem ipsum dolor sit amet consectetur. Ac quam sem mi nibh volutpat enim pellentesque. Proin iaculis nisl et neque sed fermentum sollicitudin lectus. Rorem ipsum dolor sit amet consectetur. Ac quam sem mi nibh volutpat enim pellentesque. Proin iaculis nisl et neque sed fermentum sollicitudin lectus.
               </p>
-              <button className="btn btn-outline btn-large learn-more-btn reveal-on-scroll" onClick={() => {
-                const event = new CustomEvent('openContactModal');
-                window.dispatchEvent(event);
-              }}>
+              <button
+                className="btn btn-outline btn-large learn-more-btn reveal-on-scroll"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.querySelector('.resources');
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                    return;
+                  }
+                  // fallback to blog route
+                  navigate('/blogs');
+                }}
+              >
                 Learn More
               </button>
             </div>
