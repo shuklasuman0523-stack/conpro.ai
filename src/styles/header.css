@@ -261,8 +261,10 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(15, 15, 26, 0.50);
-    backdrop-filter: blur(20px);
+  background: rgba(15, 15, 26, 0.50);
+  /* disable nav blur for clarity on mobile */
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
     border-top: none;
     display: flex;
     flex-direction: column;

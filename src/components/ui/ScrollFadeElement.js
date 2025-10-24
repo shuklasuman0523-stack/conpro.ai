@@ -49,16 +49,16 @@ const ScrollFadeElement = ({ children, className = '', fadeIntensity = 0.7, blur
 
               // Apply fade and blur effect to individual element
               const opacity = 1 - (progress * fadeIntensity);
-              const blur = progress * blurIntensity;
 
+              // Remove blur effect; only animate opacity for clarity
               child.style.opacity = opacity.toString();
-              child.style.filter = `blur(${blur}px)`;
-              child.style.transition = 'opacity 0.3s ease-out, filter 0.3s ease-out';
+              child.style.transition = 'opacity 0.3s ease-out';
             } else {
               // Reset when element enters viewport from bottom
               if (elementTop > scrollY + viewportHeight) {
                 child.style.opacity = '1';
-                child.style.filter = 'blur(0px)';
+                // ensure filter is cleared
+                child.style.filter = 'none';
               }
             }
           });

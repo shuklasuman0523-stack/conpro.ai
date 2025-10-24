@@ -48,14 +48,12 @@ const Hero = () => {
         progress = Math.min(1, (fadeStartPosition - paragraphTop) / (fadeStartPosition - fadeEndPosition));
       }
       
-      // Apply fade effect only to heading with will-change for performance
-      const opacity = 1 - progress * 0.8; // Fade to 20% opacity
-      const blur = progress * 6; // Blur up to 6px
+  // Apply fade effect only to heading (blur removed)
+  const opacity = 1 - progress * 0.8; // Fade to 20% opacity
       
-      headingElement.style.willChange = 'opacity, filter, transform';
-      headingElement.style.opacity = opacity.toString();
-      headingElement.style.filter = `blur(${blur}px)`;
-      headingElement.style.transform = `translateY(${progress * -30}px)`; // Move up as it fades
+  headingElement.style.willChange = 'opacity, transform';
+  headingElement.style.opacity = opacity.toString();
+  headingElement.style.transform = `translateY(${progress * -30}px)`; // Move up as it fades
       
       // Fade paragraph lines individually
       paragraphLinesRef.current.forEach((line) => {
@@ -72,13 +70,11 @@ const Hero = () => {
           lineProgress = Math.min(1, (lineFadeStart - lineTop) / (lineFadeStart - lineFadeEnd));
         }
         
-        const lineOpacity = 1 - lineProgress * 0.8;
-        const lineBlur = lineProgress * 6;
+  const lineOpacity = 1 - lineProgress * 0.8;
         
-        line.style.willChange = 'opacity, filter, transform';
-        line.style.opacity = lineOpacity.toString();
-        line.style.filter = `blur(${lineBlur}px)`;
-        line.style.transform = `translateY(${lineProgress * -30}px)`;
+  line.style.willChange = 'opacity, transform';
+  line.style.opacity = lineOpacity.toString();
+  line.style.transform = `translateY(${lineProgress * -30}px)`;
       });
       
       // Fade buttons when they reach the top
@@ -93,13 +89,11 @@ const Hero = () => {
         buttonsProgress = Math.min(1, (buttonsFadeStart - buttonsTop) / (buttonsFadeStart - buttonsFadeEnd));
       }
       
-      const buttonsOpacity = 1 - buttonsProgress * 0.8;
-      const buttonsBlur = buttonsProgress * 6;
+  const buttonsOpacity = 1 - buttonsProgress * 0.8;
       
-      buttonsElement.style.willChange = 'opacity, filter, transform';
-      buttonsElement.style.opacity = buttonsOpacity.toString();
-      buttonsElement.style.filter = `blur(${buttonsBlur}px)`;
-      buttonsElement.style.transform = `translateY(${buttonsProgress * -30}px)`;
+  buttonsElement.style.willChange = 'opacity, transform';
+  buttonsElement.style.opacity = buttonsOpacity.toString();
+  buttonsElement.style.transform = `translateY(${buttonsProgress * -30}px)`;
       
       // Get trust text position for its fade
       const trustRect = trustElement.getBoundingClientRect();
@@ -116,13 +110,11 @@ const Hero = () => {
       }
       
       // Apply fade effect to trust text
-      const trustOpacity = 1 - trustProgress * 0.8;
-      const trustBlur = trustProgress * 6;
+  const trustOpacity = 1 - trustProgress * 0.8;
       
-      trustElement.style.willChange = 'opacity, filter, transform';
-      trustElement.style.opacity = trustOpacity.toString();
-      trustElement.style.filter = `blur(${trustBlur}px)`;
-      trustElement.style.transform = `translateY(${trustProgress * -30}px)`;
+  trustElement.style.willChange = 'opacity, transform';
+  trustElement.style.opacity = trustOpacity.toString();
+  trustElement.style.transform = `translateY(${trustProgress * -30}px)`;
     };
     
     // Initialize

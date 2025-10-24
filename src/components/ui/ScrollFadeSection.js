@@ -41,13 +41,11 @@ const ScrollFadeSection = ({ children, className = '' }) => {
               progress = Math.min(1, (scrolledPast - fadeStart) / (fadeEnd - fadeStart));
             }
             
-            // Apply fade effect
+            // Apply fade effect (blur removed - keep opacity only)
             sectionElement.style.setProperty('--section-opacity', (1 - progress * 0.7).toString()); // Fade to 30%
-            sectionElement.style.setProperty('--section-blur', `${progress * 2}px`); // Subtle blur
           } else {
-            // Reset when out of viewport
+            // Reset when out of viewport (no blur variable)
             sectionElement.style.setProperty('--section-opacity', '1');
-            sectionElement.style.setProperty('--section-blur', '0px');
           }
           
           ticking = false;
@@ -83,13 +81,12 @@ const ScrollFadeSection = ({ children, className = '' }) => {
     };
   }, []);
 
-  return (
+    return (
     <div 
       ref={sectionRef}
       className={`scroll-fade-section ${className}`}
       style={{
-        '--section-opacity': 1,
-        '--section-blur': '0px',
+        '--section-opacity': 1
       }}
     >
       {children}

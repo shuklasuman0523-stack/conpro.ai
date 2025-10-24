@@ -64,7 +64,7 @@ const Resources = () => {
         </div>
         <div className="resource-categories reveal-on-scroll">
           {categories.map((category, index) => (
-            <button key={index} className={`category-btn ${index === 0 ? 'active' : ''}`}>
+            <button key={index} className={`category-btn ${index === 0 ? 'active' : ''}`} onClick={() => setActiveInidex(index)} aria-pressed={activeIndex === index}>
               {category}
             </button>
           ))}
@@ -80,7 +80,7 @@ const Resources = () => {
                 <div className="article-content">
                   <h3 className="article-title">{article.title}</h3>
                   <p className="article-description">{article.description}</p>
-                  <button className="read-more-btn">
+                  <button className="read-more-btn" onClick={() => window.dispatchEvent(new CustomEvent('openContactModal'))}>
                     READ MORE →
                   </button>
                 </div>
@@ -107,10 +107,10 @@ const Resources = () => {
               <div className="article-image">
                 <img src={articles[activeIndex].image} alt={articles[activeIndex].title} />
               </div>
-              <div className="article-content">
+                <div className="article-content">
                 <h3 className="article-title">{articles[activeIndex].title}</h3>
                 <p className="article-description">{articles[activeIndex].description}</p>
-                <button className="read-more-btn">
+                <button className="read-more-btn" onClick={() => window.dispatchEvent(new CustomEvent('openContactModal'))}>
                   READ MORE →
                 </button>
               </div>

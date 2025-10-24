@@ -1,0 +1,94 @@
+/* Careers page specific styles */
+.careers-page .careers-content {
+  padding: 3rem 1rem 4rem;
+}
+
+.careers-page .careers-intro {
+  max-width: 980px;
+  margin: 0 auto 1.75rem auto;
+  text-align: center; /* center the header and paragraph */
+  padding: 0 1rem;
+}
+
+.careers-page .careers-intro h2 {
+  margin-bottom: 0.5rem;
+}
+
+.careers-page .careers-intro p {
+  margin: 0 auto;
+  color: #cbd5e1;
+  max-width: 820px;
+}
+
+.careers-page .careers-form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.careers-page .careers-form {
+  width: 100%;
+  max-width: 760px; /* reduce size to more compact */
+  background: transparent;
+  padding: 1rem 1.25rem;
+  box-sizing: border-box;
+}
+
+.careers-page .careers-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.careers-page .careers-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #d1d5db;
+  font-weight: 600;
+}
+
+.careers-page .careers-form input[type="text"],
+.careers-page .careers-form input[type="email"],
+.careers-page .careers-form input[type="file"],
+.careers-page .careers-form textarea {
+  width: 100%;
+  max-width: 680px; /* slightly less than form width */
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(148,163,184,0.08);
+  background: rgba(20,18,29,0.6);
+  color: #e5e7eb;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.careers-page .careers-form input[type="file"] {
+  padding: 0.35rem 0.5rem;
+}
+
+.careers-page .careers-form .form-actions {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center; /* center submit button */
+}
+
+.careers-page .careers-form .btn {
+  min-width: 220px;
+}
+
+/* Smaller widths on mobile */
+@media (max-width: 768px) {
+  .careers-page .careers-form {
+    max-width: 92%;
+    padding: 0.5rem;
+  }
+  .careers-page .careers-form input[type="text"],
+  .careers-page .careers-form input[type="email"],
+  .careers-page .careers-form textarea {
+    max-width: 100%;
+    padding: 0.8rem;
+  }
+  .careers-page .careers-form .btn {
+    min-width: 180px;
+  }
+}

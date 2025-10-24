@@ -1,5 +1,6 @@
 import React from 'react';
 import ParallaxSection from '../components/ui/ParallaxSection';
+import { useNavigate } from 'react-router-dom';
 import {
   Hero,
   CompanyLogos,
@@ -13,6 +14,50 @@ import {
 } from '../components';
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleAboutClick = (e) => {
+    e.preventDefault();
+    const el = document.getElementById('about') || document.querySelector('.about');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    // fallback to navigate if section/page not present
+    navigate('/about');
+  };
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    window.dispatchEvent(new CustomEvent('openContactModal'));
+  };
+
+  const handleCareersClick = (e) => {
+    e.preventDefault();
+    // prefer navigating to a careers route if available
+    navigate('/careers');
+  };
+
+  const handleBlogsClick = (e) => {
+    e.preventDefault();
+    const el = document.querySelector('.resources');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    navigate('/blogs');
+  };
+
+  const handlePrivacyClick = (e) => {
+    e.preventDefault();
+    navigate('/privacy');
+  };
+
+  const handleTermsClick = (e) => {
+    e.preventDefault();
+    navigate('/terms');
+  };
+
   return (
     <main>
       <Hero />
@@ -59,7 +104,7 @@ const Home = () => {
                     placeholder="Your Email" 
                     className="journey-input"
                   />
-                  <button className="journey-button">Get Started</button>
+                  <button className="journey-button" onClick={() => window.dispatchEvent(new CustomEvent('openContactModal'))}>Get Started</button>
                 </div>
               </div>
             </div>
@@ -98,10 +143,10 @@ const Home = () => {
               <ParallaxSection speed={0.05} direction="up" className="footer-section">
                 <h4 className="footer-title reveal-on-scroll">Company</h4>
                 <ul className="footer-list">
-                  <li><a href="#" className="footer-link reveal-on-scroll" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>About us</a></li>
-                  <li><a href="#" className="footer-link reveal-on-scroll" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>Contact us</a></li>
-                  <li><a href="#" className="footer-link reveal-on-scroll" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>Careers</a></li>
-                  <li><a href="#" className="footer-link reveal-on-scroll" onClick={e => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>Blogs</a></li>
+                  <li><a href="#about" className="footer-link reveal-on-scroll" onClick={handleAboutClick}>About us</a></li>
+                  <li><a href="#contact" className="footer-link reveal-on-scroll" onClick={handleContactClick}>Contact us</a></li>
+                  <li><a href="/careers" className="footer-link reveal-on-scroll" onClick={handleCareersClick}>Careers</a></li>
+                  <li><a href="#blogs" className="footer-link reveal-on-scroll" onClick={handleBlogsClick}>Blogs</a></li>
                 </ul>
               </ParallaxSection>
 
@@ -114,8 +159,8 @@ const Home = () => {
               <ParallaxSection speed={0.12} direction="up" className="footer-section">
                 <h4 className="footer-title reveal-on-scroll">Legal</h4>
                 <ul className="footer-list">
-                  <li><a href="/privacy" className="footer-link reveal-on-scroll">Privacy Policy</a></li>
-                  <li><a href="/terms" className="footer-link reveal-on-scroll">Terms & Conditions</a></li>
+                  <li><a href="/privacy" className="footer-link reveal-on-scroll" onClick={handlePrivacyClick}>Privacy Policy</a></li>
+                  <li><a href="/terms" className="footer-link reveal-on-scroll" onClick={handleTermsClick}>Terms & Conditions</a></li>
                 </ul>
               </ParallaxSection>
             </div>

@@ -115,7 +115,9 @@ body {
   background: transparent;
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  /* disable visual blur for clarity */
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .btn-outline:hover {
@@ -136,7 +138,9 @@ body {
   left: 0;
   right: 0;
   background: rgba(15, 15, 26, 0.95);
-  backdrop-filter: blur(10px);
+  /* disable visual blur for clarity */
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
   border-bottom: 1px solid rgba(139, 92, 246, 0.2);
   z-index: 1000;
   transition: all 0.3s ease;
@@ -1274,7 +1278,8 @@ body {
   border-radius: 16px;
   padding: 2rem;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  /* disable visual blur for clarity */
+  backdrop-filter: none;
 }
 
 .service-card:hover {
@@ -1527,7 +1532,8 @@ body {
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  /* disable visual blur for clarity */
+  backdrop-filter: none;
 }
 
 .article-card:hover {

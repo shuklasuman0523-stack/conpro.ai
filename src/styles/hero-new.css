@@ -15,7 +15,7 @@
   --hero-translateY: 0px;
   --hero-scale: 1;
   --hero-bg-opacity: 1;
-  --hero-blur: 0px;
+  /* Removed --hero-blur: scroll-driven blur disabled to keep content sharp during scrolling */
   transition: opacity 0.5s ease-out;
   opacity: var(--hero-bg-opacity, 1);
 }
@@ -69,9 +69,10 @@
   /* Apply visual effects only - NO position or scale changes */
   opacity: var(--hero-opacity, 1);
   transform: translateY(0px) scale(1); /* Always stay in place */
-  filter: blur(var(--hero-blur, 0px)); /* Add blur effect on scroll */
-  transition: opacity 0.5s ease-out, filter 0.5s ease-out;
-  will-change: opacity, filter;
+  /* Disable blur effect on scroll to keep elements sharp */
+  filter: none;
+  transition: opacity 0.5s ease-out;
+  will-change: opacity;
 }
 
 /* When hero content is vanished, disable pointer events */
