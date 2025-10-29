@@ -22,6 +22,7 @@
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
+    "@babel/traverse": "^7.28.5",
     "emailjs-com": "^3.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
