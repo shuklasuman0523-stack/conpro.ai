@@ -58,38 +58,38 @@
   top: 0;
   left: 0;
   right: 0;
-  background: #1f1b33cc;
-  border-bottom: none;
+  background: rgba(26, 20, 48, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 1000;
   transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 0;
 }
 
 /* Desktop-only: increase header background height */
 @media (min-width: 769px) {
   .header {
-    padding-top: 18px; /* increase top padding to make background taller */
-    padding-bottom: 18px; /* increase bottom padding */
-    /* keep layout of inner container unchanged by using taller spacing */
+    padding: 16px 0;
   }
   .header .container {
-    margin: 24px auto; /* slightly increase vertical spacing for desktop */
+    margin: 0 auto;
   }
   /* Desktop: slightly smaller logo and tighter contact button */
   .logo, .logo-accent {
     width: 140px;
     height: 34px;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 34px;
   }
   .contact-btn {
-    /* pill-style small button like the "Get In Touch" example */
-    padding: 8px 18px !important;
-    border-radius: 24px !important;
+    padding: 10px 24px !important;
+    border-radius: 30px !important;
     min-width: auto;
     font-size: 0.95rem;
     line-height: 1;
+    font-weight: 500;
   }
-
 }
 
 .header-visible {
@@ -106,16 +106,18 @@
 .header .container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 0 var(--spacing-xl);
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
   position: relative;
+  height: 100%;
 }
 
 .nav-brand {
-  position: absolute;
-  left: var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  z-index: 10;
 }
 
 .logo {
@@ -153,27 +155,36 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   justify-content: center;
-  margin-left: -19px;
+  flex: 1;
+  margin: 0;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 2.5rem;
   margin: 0;
   padding: 0;
   justify-content: center;
+  align-items: center;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #94A3B8;
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
+  font-size: 0.95rem;
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
 }
 
 .nav-links a:focus {
@@ -193,11 +204,36 @@
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #7186FF 0%, #FE7587 100%);
+  border-radius: 2px;
 }
 
 .contact-btn {
-  padding: 7px 0px !important;
-  border-radius: 35px !important;
+  padding: 10px 24px !important;
+  border-radius: 30px !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  white-space: nowrap;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4) !important;
+}
   padding: 1rem 2rem;
   color: rgb(255, 255, 255);
   background: transparent;
