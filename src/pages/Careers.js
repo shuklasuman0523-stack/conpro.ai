@@ -141,7 +141,7 @@ const Careers = () => {
                 <h4 className="footer-title reveal-on-scroll">Company</h4>
                 <ul className="footer-list">
                   <li><a href="#about" className="footer-link reveal-on-scroll" onClick={(e) => { e.preventDefault(); const el = document.getElementById('about') || document.querySelector('.about'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); return; } window.location.href = '/about'; }}>About us</a></li>
-                  <li><a href="#contact" className="footer-link reveal-on-scroll" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('openContactModal')); }}>Contact us</a></li>
+                  <li><a href="#contact" className="footer-link reveal-on-scroll" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('openContactModal')); }}>Contact us</a></li>
                   <li><a href="/careers" className="footer-link reveal-on-scroll">Careers</a></li>
                   <li><a href="#blogs" className="footer-link reveal-on-scroll" onClick={(e) => { e.preventDefault(); const el = document.querySelector('.resources'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); return; } window.location.href = '/blogs'; }}>Blogs</a></li>
                 </ul>

@@ -29,7 +29,7 @@ const Home = () => {
 
   const handleContactClick = (e) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('openContactModal'));
+      window.dispatchEvent(new Event('openContactModal'));
   };
 
   const handleCareersClick = (e) => {
@@ -104,7 +104,16 @@ const Home = () => {
                     placeholder="Your Email" 
                     className="journey-input"
                   />
-                  <button className="journey-button" onClick={() => window.dispatchEvent(new CustomEvent('openContactModal'))}>Get Started</button>
+                  <button
+                    className="journey-button"
+                    onClick={() => {
+                      if (typeof window.openContactModal === 'function') {
+                        window.openContactModal();
+                        return;
+                      }
+                      window.dispatchEvent(new Event('openContactModal'));
+                    }}
+                  >Get Started</button>
                 </div>
               </div>
             </div>

@@ -80,7 +80,16 @@ const Resources = () => {
                 <div className="article-content">
                   <h3 className="article-title">{article.title}</h3>
                   <p className="article-description">{article.description}</p>
-                  <button className="read-more-btn" onClick={() => window.dispatchEvent(new CustomEvent('openContactModal'))}>
+                  <button
+                    className="read-more-btn"
+                    onClick={() => {
+                      if (typeof window.openContactModal === 'function') {
+                        window.openContactModal();
+                        return;
+                      }
+                      window.dispatchEvent(new Event('openContactModal'));
+                    }}
+                  >
                     READ MORE →
                   </button>
                 </div>
@@ -110,7 +119,16 @@ const Resources = () => {
                 <div className="article-content">
                 <h3 className="article-title">{articles[activeIndex].title}</h3>
                 <p className="article-description">{articles[activeIndex].description}</p>
-                <button className="read-more-btn" onClick={() => window.dispatchEvent(new CustomEvent('openContactModal'))}>
+                <button
+                  className="read-more-btn"
+                  onClick={() => {
+                    if (typeof window.openContactModal === 'function') {
+                      window.openContactModal();
+                      return;
+                    }
+                    window.dispatchEvent(new Event('openContactModal'));
+                  }}
+                >
                   READ MORE →
                 </button>
               </div>

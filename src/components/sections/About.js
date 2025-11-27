@@ -23,10 +23,10 @@ const About = () => {
   ];
 
   const stats = [
-    { number: '50M+', label: 'Data Points Processed' },
-    { number: '99.8%', label: 'Accuracy Rate' },
     { number: '500+', label: 'Enterprise Clients' },
-    { number: '24/7', label: 'Support Available' }
+    { number: '$12.5M+', label: 'Client Savings' },
+    { number: '98%', label: 'Retention Rate' },
+    { number: '250+', label: 'AI Experts' }
   ];
 
   return (
@@ -36,14 +36,21 @@ const About = () => {
           <div className="about-text">
             <h2 className="section-title">About ConPro.AI</h2>
             <p className="about-description">
-              Founded in 2020, ConPro.AI emerged from a vision to democratize artificial intelligence 
-              for businesses of all sizes. Our team of world-class AI researchers and engineers 
-              has created a platform that makes advanced AI accessible, reliable, and scalable.
+              Founded in 2020 by Dr. Sarah Chen and Alex Rodriguez, ConPro.AI was born from a simple yet powerful vision: 
+              to bridge the gap between cutting-edge AI technology and practical business application. Today, we're a 
+              global leader in enterprise AI solutions, serving 500+ organizations across healthcare, finance, retail, 
+              manufacturing, and logistics.
             </p>
             <p className="about-description">
-              We believe that AI should augment human intelligence, not replace it. Our solutions 
-              are designed to empower your team to make better decisions, work more efficiently, 
-              and unlock new possibilities for innovation.
+              Our platform delivers measurable results—reducing operational costs by 40-60%, accelerating critical processes 
+              by up to 73%, and generating an average ROI of 300-500%. We believe AI should augment human intelligence, 
+              not replace it, which is why our solutions are designed to empower your team with intelligent automation 
+              while keeping humans in control of strategic decisions.
+            </p>
+            <p className="about-description">
+              With offices in San Francisco, New York, London, and Singapore, we combine world-class AI research with 
+              deep industry expertise to solve real business problems. Our 98% client retention rate speaks to our 
+              commitment to delivering lasting value, not just impressive technology.
             </p>
             
             <div className="about-stats">
@@ -92,9 +99,10 @@ const About = () => {
           <div className="mission-content">
             <h3>Our Mission</h3>
             <p>
-              To accelerate human progress by making artificial intelligence accessible, 
-              ethical, and beneficial for everyone. We're building the future where AI 
-              enhances human potential across all industries and applications.
+              To democratize artificial intelligence by creating solutions powerful enough for Fortune 500 companies, 
+              yet accessible enough for mid-market businesses. We're accelerating human progress by making AI practical, 
+              ethical, and profitable—empowering every organization to compete in an AI-driven world while maintaining 
+              the human touch that makes businesses unique.
             </p>
           </div>
         </div>

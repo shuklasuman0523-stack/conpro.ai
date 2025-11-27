@@ -25,12 +25,19 @@ const Header = () => {
 
     const handleOpenContactModal = () => setIsContactModalOpen(true);
 
+    // Expose a global function as a fallback for components that cannot
+    // reliably dispatch/listen to custom events in some environments.
+    // Components can call `window.openContactModal()` directly.
+    window.openContactModal = handleOpenContactModal;
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('openContactModal', handleOpenContactModal);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('openContactModal', handleOpenContactModal);
+      // Clean up the global function when header unmounts
+      try { delete window.openContactModal; } catch (e) { window.openContactModal = undefined; }
     };
   }, [lastScrollY]);
 
@@ -85,11 +92,13 @@ const Header = () => {
             </button>
           )}
           <ul className="nav-links">
-            <li><a href="#home" className="nav-link">Home</a></li>
-            <li><a href="#about" className="nav-link">About</a></li>
-            <li><a href="#services" className="nav-link">Services</a></li>
-            <li><a href="#products" className="nav-link">Products</a></li>
-            <li><a href="#testimonials" className="nav-link">Testimonials</a></li>
+            <li><Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/solutions" className={`nav-link ${isActive('/solutions') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Solutions</Link></li>
+            <li><Link to="/products" className={`nav-link ${isActive('/products') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Products</Link></li>
+            <li><Link to="/services" className={`nav-link ${isActive('/services') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Services</Link></li>
+            <li><Link to="/case-studies" className={`nav-link ${isActive('/case-studies') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Case Studies</Link></li>
+            <li><Link to="/blog" className={`nav-link ${isActive('/blog') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
+            <li><Link to="/company" className={`nav-link ${isActive('/company') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Company</Link></li>
           </ul>
           <div className="nav-contact-btn-wrapper">
             <button

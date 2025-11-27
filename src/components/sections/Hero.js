@@ -5,7 +5,7 @@ import '../../styles/hero-new.css';
 const Hero = () => {
   // Custom event to open contact modal in Header
   const openContactModal = () => {
-    const event = new CustomEvent('openContactModal');
+    const event = new Event('openContactModal');
     window.dispatchEvent(event);
   };
   const rootRef = useRef(null);
@@ -144,27 +144,27 @@ const Hero = () => {
             {/* Heading */}
             <h1 className="hero-heading" ref={headingRef}>
               <span className="hero-heading-white">
-                Unlock AI-Powered Insights to Drive<br />
+                Transform Your Business with<br />
               </span>
               {' '}
               <span className="hero-heading-gradient">
-                Business Decisions Today
+                Enterprise-Grade AI Solutions
               </span>
             </h1>
             
             {/* Paragraph */}
             <p className="hero-paragraph" ref={paragraphRef}>
               <span ref={el => paragraphLinesRef.current[0] = el} style={{ display: 'block', transition: 'none' }}>
-                I've created comprehensive marketing-ready website copy that positions your healthcare AI solutions as
+                ConPro.AI delivers intelligent automation that reduces costs by 40-60%, accelerates processes
               </span>
               <span ref={el => paragraphLinesRef.current[1] = el} style={{ display: 'block', transition: 'none' }}>
-                essential business transformations rather than just technology implementations. The content leverages
+                by up to 73%, and drives measurable ROI within months. Our solutions are trusted by 500+ enterprises
               </span>
               <span ref={el => paragraphLinesRef.current[2] = el} style={{ display: 'block', transition: 'none' }}>
-                compelling statistics and ROI metrics to create urgency while addressing the real pain points healthcare
+                across healthcare, finance, retail, and manufacturing—delivering $12.5M+ in proven client savings
               </span>
               <span ref={el => paragraphLinesRef.current[3] = el} style={{ display: 'block', transition: 'none' }}>
-                organizations face daily.
+                through AI-powered automation and predictive intelligence.
               </span>
             </p>
             
@@ -183,7 +183,7 @@ const Hero = () => {
         {/* Trust statement */}
         <div className="hero-trust" ref={trustRef}>
           <p className="hero-trust-text">
-            TRUSTED BY COMPANIES IN 100+ COUNTRIES AROUND THE GLOBE.
+            TRUSTED BY 500+ ENTERPRISES • $12.5M+ CLIENT SAVINGS • 98% RETENTION RATE • GLOBAL AI LEADER
           </p>
         </div>
       </div>

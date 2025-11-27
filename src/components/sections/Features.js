@@ -77,7 +77,16 @@ const Services = () => {
         </ScrollFadeElement>
         
         <div className="services-cta">
-          <button className="btn btn-outline btn-large" onClick={() => window.dispatchEvent(new CustomEvent('openContactModal'))}>Book a Demo</button>
+          <button
+            className="btn btn-outline btn-large"
+            onClick={() => {
+              if (typeof window.openContactModal === 'function') {
+                window.openContactModal();
+                return;
+              }
+              window.dispatchEvent(new Event('openContactModal'));
+            }}
+          >Book a Demo</button>
         </div>
       </div>
     </section>

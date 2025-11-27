@@ -93,7 +93,16 @@ const Services = () => {
           </div>
 
           <div className="section-cta">
-            <button className="btn-primary btn-demo" onClick={() => window.dispatchEvent(new CustomEvent('openContactModal'))}>Book a Demo</button>
+            <button
+              className="btn-primary btn-demo"
+              onClick={() => {
+                if (typeof window.openContactModal === 'function') {
+                  window.openContactModal();
+                  return;
+                }
+                window.dispatchEvent(new Event('openContactModal'));
+              }}
+            >Book a Demo</button>
           </div>
         </div>
       </section>
@@ -121,7 +130,16 @@ const Services = () => {
                     placeholder="Your Email" 
                     className="journey-input"
                   />
-                  <button className="journey-button" onClick={() => window.dispatchEvent(new CustomEvent('openContactModal'))}>Get Started</button>
+                  <button
+                    className="journey-button"
+                    onClick={() => {
+                      if (typeof window.openContactModal === 'function') {
+                        window.openContactModal();
+                        return;
+                      }
+                      window.dispatchEvent(new Event('openContactModal'));
+                    }}
+                  >Get Started</button>
                 </div>
               </div>
             </div>

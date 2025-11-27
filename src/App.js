@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components';
-import { Home, About, Services, Products, Testimonials, Careers } from './pages';
+import { Home, About, Services, Products, Testimonials, Careers, CaseStudies, Blog, Solutions, Company } from './pages';
 import './styles/index.css';
 
 function App() {
@@ -14,8 +14,12 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/company" element={<Company />} />
           </Routes>
         </Layout>
       </div>

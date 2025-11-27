@@ -60,7 +60,7 @@ const Contact = () => {
               <div className="contact-icon">💬</div>
               <h3>Live Chat</h3>
               <p>Available 24/7</p>
-              <button className="btn btn-outline" onClick={() => window.dispatchEvent(new CustomEvent('openContactModal'))}>Start Chat</button>
+              <button className="btn btn-outline" onClick={() => window.dispatchEvent(new Event('openContactModal'))}>Start Chat</button>
             </div>
           </div>
           
