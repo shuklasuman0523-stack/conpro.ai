@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ScrollFadeSection } from '../components/ui';
+import { Link } from 'react-router-dom';
+import { HeroVideoBackground } from '../components/ui';
 import '../styles/case-studies.css';
 
 const CaseStudies = () => {
@@ -154,8 +155,11 @@ const CaseStudies = () => {
 
   return (
     <main className="case-studies-page">
-      <ScrollFadeSection>
-        <section className="page-hero case-studies-hero">
+      <div>
+        <HeroVideoBackground 
+          className="page-hero case-studies-hero"
+          videoSrc="https://bitbet33-images-apne1.s3.ap-northeast-1.amazonaws.com/3108007-uhd_3840_2160_25fps.mp4"
+        >
           <div className="container">
             <div className="hero-content">
               <p className="section-badge">SUCCESS STORIES</p>
@@ -180,10 +184,10 @@ const CaseStudies = () => {
               </div>
             </div>
           </div>
-        </section>
-      </ScrollFadeSection>
+        </HeroVideoBackground>
+      </div>
 
-      <ScrollFadeSection>
+      <div>
         <section className="case-studies-filters">
           <div className="container">
             <div className="filter-buttons">
@@ -199,12 +203,12 @@ const CaseStudies = () => {
             </div>
           </div>
         </section>
-      </ScrollFadeSection>
+      </div>
 
       <section className="case-studies-list">
         <div className="container">
           {filteredCaseStudies.map((study, index) => (
-            <ScrollFadeSection key={study.id}>
+            <div key={study.id}>
               <div className={`case-study-card ${index % 2 === 1 ? 'reverse' : ''}`}>
                 <div className="case-study-header">
                   <span className="case-study-icon">{study.image}</span>
@@ -253,8 +257,11 @@ const CaseStudies = () => {
                 </div>
 
                 <div className="case-study-cta">
+                  <Link to={`/case-studies/${study.id}`} className="btn-primary">
+                    View Full Case Study
+                  </Link>
                   <button
-                    className="btn-primary"
+                    className="btn-secondary"
                     onClick={() => {
                       if (typeof window.openContactModal === 'function') {
                         window.openContactModal();
@@ -267,12 +274,12 @@ const CaseStudies = () => {
                   </button>
                 </div>
               </div>
-            </ScrollFadeSection>
+            </div>
           ))}
         </div>
       </section>
 
-      <ScrollFadeSection>
+      <div>
         <section className="case-studies-cta">
           <div className="container">
             <div className="cta-content">
@@ -301,7 +308,7 @@ const CaseStudies = () => {
             </div>
           </div>
         </section>
-      </ScrollFadeSection>
+      </div>
     </main>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollFadeSection } from '../components/ui';
+import { HeroVideoBackground } from '../components/ui';
 import '../styles/blog.css';
 
 const Blog = () => {
@@ -149,8 +149,11 @@ const Blog = () => {
 
   return (
     <main className="blog-page">
-      <ScrollFadeSection>
-        <section className="page-hero blog-hero">
+      <div>
+        <HeroVideoBackground 
+          className="page-hero blog-hero"
+          videoSrc="https://bitbet33-images-apne1.s3.ap-northeast-1.amazonaws.com/4828605-uhd_4096_2160_25fps.mp4"
+        >
           <div className="container">
             <p className="section-badge">INSIGHTS & UPDATES</p>
             <h1 className="section-title">ConPro.AI Blog</h1>
@@ -159,10 +162,10 @@ const Blog = () => {
               for digital transformation
             </p>
           </div>
-        </section>
-      </ScrollFadeSection>
+        </HeroVideoBackground>
+      </div>
 
-      <ScrollFadeSection>
+      <div>
         <section className="featured-post">
           <div className="container">
             <div className="featured-card">
@@ -188,7 +191,7 @@ const Blog = () => {
             </div>
           </div>
         </section>
-      </ScrollFadeSection>
+      </div>
 
       <section className="blog-filters">
         <div className="container">
@@ -210,7 +213,7 @@ const Blog = () => {
         <div className="container">
           <div className="posts-grid">
             {filteredPosts.map(post => (
-              <ScrollFadeSection key={post.id}>
+              <div key={post.id}>
                 <article className="blog-card">
                   <div className="blog-card-header">
                     <span className="post-icon">{post.image}</span>
@@ -234,13 +237,13 @@ const Blog = () => {
                   </div>
                   <button className="read-more-link">Read More →</button>
                 </article>
-              </ScrollFadeSection>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <ScrollFadeSection>
+      <div>
         <section className="blog-newsletter">
           <div className="container">
             <div className="newsletter-content">
@@ -263,7 +266,7 @@ const Blog = () => {
             </div>
           </div>
         </section>
-      </ScrollFadeSection>
+      </div>
     </main>
   );
 };

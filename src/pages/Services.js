@@ -1,6 +1,6 @@
 import React from 'react';
 import { CompanyLogos, Features, AIExpertise, Stats, Testimonials } from '../components';
-import { ScrollFadeSection } from '../components/ui';
+import { HeroVideoBackground } from '../components/ui';
 
 const Services = () => {
   const services = [
@@ -50,22 +50,22 @@ const Services = () => {
 
   return (
     <main className="services-page">
-      <ScrollFadeSection>
-        <section className="page-hero">
+      <div>
+        <HeroVideoBackground className="page-hero">
           <div className="container">
             <h1 className="section-title">Our Services</h1>
             <p className="section-subtitle">
               Comprehensive AI solutions to transform your business operations
             </p>
           </div>
-        </section>
-      </ScrollFadeSection>
+        </HeroVideoBackground>
+      </div>
 
-      <ScrollFadeSection>
+      <div>
         <CompanyLogos />
-      </ScrollFadeSection>
+      </div>
 
-      <ScrollFadeSection>
+      <div>
         <section className="services">
         <div className="container">
           <div className="section-header">
@@ -106,10 +106,10 @@ const Services = () => {
           </div>
         </div>
       </section>
-      </ScrollFadeSection>
+      </div>
 
       {/* Start Your Journey Section */}
-      <ScrollFadeSection>
+      <div>
         <section className="journey-section">
         <div className="container">
           <div className="journey-content">
@@ -157,20 +157,28 @@ const Services = () => {
           </div>
         </div>
       </section>
-      </ScrollFadeSection>
+      </div>
 
-      <ScrollFadeSection>
-        <Features />
-      </ScrollFadeSection>
-      <ScrollFadeSection>
-        <AIExpertise />
-      </ScrollFadeSection>
-      <ScrollFadeSection>
-        <Stats />
-      </ScrollFadeSection>
-      <ScrollFadeSection>
-        <Testimonials />
-      </ScrollFadeSection>
+      <div>
+        <div className="dark-bg">
+          <Features />
+        </div>
+      </div>
+      <div>
+        <div className="dark-bg">
+          <AIExpertise />
+        </div>
+      </div>
+      <div>
+        <div className="dark-bg">
+          <Stats />
+        </div>
+      </div>
+      <div>
+        <div className="dark-bg">
+          <Testimonials />
+        </div>
+      </div>
     </main>
   );
 };

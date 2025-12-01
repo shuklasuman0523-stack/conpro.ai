@@ -4,8 +4,7 @@ import { ContactModal } from '../ui';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const location = useLocation();
 
@@ -14,13 +13,8 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      // Always hide header when scrolling (except at very top)
-      if (currentScrollY > 10) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-      setLastScrollY(currentScrollY);
+      // Add background when scrolled for better visibility
+      setIsScrolled(currentScrollY > 50);
     };
 
     const handleOpenContactModal = () => setIsContactModalOpen(true);
@@ -39,7 +33,7 @@ const Header = () => {
       // Clean up the global function when header unmounts
       try { delete window.openContactModal; } catch (e) { window.openContactModal = undefined; }
     };
-  }, [lastScrollY]);
+  }, []);
 
   // Lock scroll on mobile when nav is open
   useEffect(() => {
@@ -54,7 +48,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className={`header ${isVisible ? 'header-visible' : 'header-hidden'}`}>
+    <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
       <div className="container">
         {/* Hide logo when mobile nav is open */}
         {!isMenuOpen && (

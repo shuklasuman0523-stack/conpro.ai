@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import ParallaxSection from '../ui/ParallaxSection';
-import ScrollFadeElement from '../ui/ScrollFadeElement';
+
 
 const Resources = () => {
   const categories = [
@@ -12,16 +13,19 @@ const Resources = () => {
 
   const articles = [
     {
+      id: 1,
       image: require('../../assets/images/healthcare-expensive.png'),
       title: 'The Hidden Price of Paperwork: U.S. Health Care\'s Administrative Burden',
       description: 'In the United States, the amount spent on billing, insurance paperwork, and regulatory compliance far exceeds that of other countries — adding hundreds of billions of dollars to overall health care costs each year.'
     },
     {
+      id: 2,
       image: require('../../assets/images/ai-trends-2025.png'),
       title: 'Top 10 AI Trends in Healthcare',
       description: 'Artificial Intelligence is reshaping healthcare across every layer of the system. Conversational and agentic AI are redefining patient interactions, while personalized healthcare is making treatments more tailored than ever.'
     },
     {
+      id: 3,
       image: require('../../assets/images/automation-healthcare.png'),
       title: 'Automation Eases the Prior Authorization Burden While Driving ROI',
       description: 'Prior authorization remains one of the most time-consuming and costly processes in healthcare, often leading to delays in care and frustration for both providers and patients. By leveraging automation'
@@ -54,7 +58,7 @@ const Resources = () => {
 
   // Responsive: show carousel on mobile, grid on desktop
   return (
-    <section className="resources reveal-on-scroll">
+    <section className="resources reveal-on-scroll dark-bg">
       <div className="container">
         <div className="section-header">
           <ParallaxSection speed={0.3} direction="up">
@@ -70,7 +74,7 @@ const Resources = () => {
           ))}
         </div>
         {/* Desktop grid */}
-        <ScrollFadeElement className="articles-grid">
+        <div className="articles-grid">
           {articles.map((article, index) => (
             <ParallaxSection key={index} speed={0.1 + (index * 0.05)} direction="up">
               <div className="article-card reveal-on-scroll">
@@ -80,23 +84,14 @@ const Resources = () => {
                 <div className="article-content">
                   <h3 className="article-title">{article.title}</h3>
                   <p className="article-description">{article.description}</p>
-                  <button
-                    className="read-more-btn"
-                    onClick={() => {
-                      if (typeof window.openContactModal === 'function') {
-                        window.openContactModal();
-                        return;
-                      }
-                      window.dispatchEvent(new Event('openContactModal'));
-                    }}
-                  >
+                  <Link to={`/case-studies/${article.id}`} className="read-more-btn">
                     READ MORE →
-                  </button>
+                  </Link>
                 </div>
               </div>
             </ParallaxSection>
           ))}
-        </ScrollFadeElement>
+        </div>
         {/* Mobile carousel */}
         <div className="articles-carousel-grid">
           <div className="articles-carousel">

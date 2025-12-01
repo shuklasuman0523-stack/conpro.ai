@@ -1,32 +1,41 @@
 import React from 'react';
 import { Products as ProductsSection, Features, AIExpertise, Stats } from '../components';
-import { ScrollFadeSection } from '../components/ui';
+import { HeroVideoBackground } from '../components/ui';
 
 const Products = () => {
   return (
     <main className="products-page">
-      <ScrollFadeSection>
-        <section className="page-hero">
+      <div>
+        <HeroVideoBackground 
+          className="page-hero"
+          videoSrc="https://bitbet33-images-apne1.s3.ap-northeast-1.amazonaws.com/855411-hd_1920_1080_25fps.mp4"
+        >
           <div className="container">
             <h1 className="section-title">Our Products</h1>
             <p className="section-subtitle">
               Advanced AI solutions for modern construction challenges
             </p>
           </div>
-        </section>
-      </ScrollFadeSection>
-      <ScrollFadeSection>
+        </HeroVideoBackground>
+      </div>
+      <div>
         <ProductsSection />
-      </ScrollFadeSection>
-      <ScrollFadeSection>
-        <Features />
-      </ScrollFadeSection>
-      <ScrollFadeSection>
-        <AIExpertise />
-      </ScrollFadeSection>
-      <ScrollFadeSection>
-        <Stats />
-      </ScrollFadeSection>
+      </div>
+      <div>
+        <div className="dark-bg">
+          <Features />
+        </div>
+      </div>
+      <div>
+        <div className="dark-bg">
+          <AIExpertise />
+        </div>
+      </div>
+      <div>
+        <div className="dark-bg">
+          <Stats />
+        </div>
+      </div>
     </main>
   );
 };

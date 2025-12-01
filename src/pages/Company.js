@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollFadeSection } from '../components/ui';
+import { HeroVideoBackground } from '../components/ui';
 import '../styles/company.css';
 
 const Company = () => {
@@ -40,42 +40,42 @@ const Company = () => {
     {
       name: 'Dr. Sarah Chen',
       role: 'CEO & Co-Founder',
-      image: '👩‍💼',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face&auto=format',
       bio: 'PhD in Artificial Intelligence from MIT. Former lead researcher at Google AI, where she pioneered neural network architectures for healthcare applications. Published 40+ papers in top-tier AI conferences.',
       linkedin: '#'
     },
     {
       name: 'Alex Rodriguez',
       role: 'CTO & Co-Founder',
-      image: '👨‍💻',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format',
       bio: 'Expert in machine learning systems and autonomous technology. Previously led engineering at Tesla Autopilot team. MS in Computer Science from Stanford University.',
       linkedin: '#'
     },
     {
       name: 'Maya Patel',
       role: 'Head of AI Research',
-      image: '👩‍🔬',
+      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face&auto=format',
       bio: 'PhD in Deep Learning from Carnegie Mellon. Renowned researcher in neural networks and reinforcement learning. Former principal scientist at Amazon AI.',
       linkedin: '#'
     },
     {
       name: 'Michael Torres',
       role: 'VP of Operations',
-      image: '👨‍💼',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format',
       bio: 'MBA from Harvard Business School. 15+ years scaling enterprise software companies. Previously COO at DataRobot, growing revenue from $50M to $300M.',
       linkedin: '#'
     },
     {
       name: 'Jennifer Martinez',
       role: 'Chief Medical Officer',
-      image: '👩‍⚕️',
+      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face&auto=format',
       bio: 'MD from Johns Hopkins, board-certified in Internal Medicine. Former Chief Innovation Officer at Kaiser Permanente, leading digital health transformation.',
       linkedin: '#'
     },
     {
       name: 'Robert Chen',
       role: 'VP of Product',
-      image: '👨‍🎨',
+      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face&auto=format',
       bio: 'Former Director of Product at Salesforce Einstein AI. Led product teams that delivered AI solutions serving 50M+ users. BS in Computer Science from UC Berkeley.',
       linkedin: '#'
     }
@@ -152,8 +152,11 @@ const Company = () => {
 
   return (
     <main className="company-page">
-      <ScrollFadeSection>
-        <section className="page-hero company-hero">
+      <div>
+        <HeroVideoBackground 
+          className="page-hero company-hero"
+          videoSrc="https://bitbet33-images-apne1.s3.ap-northeast-1.amazonaws.com/6153734-uhd_4096_2160_25fps.mp4"
+        >
           <div className="container">
             <p className="section-badge">ABOUT CONPRO.AI</p>
             <h1 className="section-title">Building the Future of Intelligent Business</h1>
@@ -162,10 +165,10 @@ const Company = () => {
               for organizations worldwide
             </p>
           </div>
-        </section>
-      </ScrollFadeSection>
+        </HeroVideoBackground>
+      </div>
 
-      <ScrollFadeSection>
+      <div>
         <section className="company-mission">
           <div className="container">
             <div className="mission-content">
@@ -197,9 +200,9 @@ const Company = () => {
             </div>
           </div>
         </section>
-      </ScrollFadeSection>
+      </div>
 
-      <ScrollFadeSection>
+      <div>
         <section className="company-story">
           <div className="container">
             <h2>Our Story</h2>
@@ -217,17 +220,17 @@ const Company = () => {
             </p>
           </div>
         </section>
-      </ScrollFadeSection>
+      </div>
 
-      <ScrollFadeSection>
+      <div>
         <section className="company-timeline">
           <div className="container">
             <h2>Our Journey</h2>
             <div className="timeline">
               {timeline.map((item, index) => (
                 <div key={index} className="timeline-item">
-                  <div className="timeline-year">{item.year}</div>
                   <div className="timeline-content">
+                    <div className="timeline-year">{item.year}</div>
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
                   </div>
@@ -236,9 +239,9 @@ const Company = () => {
             </div>
           </div>
         </section>
-      </ScrollFadeSection>
+      </div>
 
-      <ScrollFadeSection>
+      <div>
         <section className="company-values">
           <div className="container">
             <h2>Our Values</h2>
@@ -256,9 +259,9 @@ const Company = () => {
             </div>
           </div>
         </section>
-      </ScrollFadeSection>
+      </div>
 
-      <ScrollFadeSection>
+      <div>
         <section className="company-leadership">
           <div className="container">
             <h2>Leadership Team</h2>
@@ -268,7 +271,9 @@ const Company = () => {
             <div className="leadership-grid">
               {leadership.map((leader, index) => (
                 <div key={index} className="leader-card">
-                  <span className="leader-image">{leader.image}</span>
+                  <span className="leader-image">
+                    <img src={leader.image} alt={leader.name} />
+                  </span>
                   <h3>{leader.name}</h3>
                   <p className="leader-role">{leader.role}</p>
                   <p className="leader-bio">{leader.bio}</p>
@@ -277,9 +282,9 @@ const Company = () => {
             </div>
           </div>
         </section>
-      </ScrollFadeSection>
+      </div>
 
-      <ScrollFadeSection>
+      <div>
         <section className="company-awards">
           <div className="container">
             <h2>Recognition & Awards</h2>
@@ -293,9 +298,9 @@ const Company = () => {
             </div>
           </div>
         </section>
-      </ScrollFadeSection>
+      </div>
 
-      <ScrollFadeSection>
+      <div>
         <section className="company-offices">
           <div className="container">
             <h2>Global Presence</h2>
@@ -311,9 +316,9 @@ const Company = () => {
             </div>
           </div>
         </section>
-      </ScrollFadeSection>
+      </div>
 
-      <ScrollFadeSection>
+      <div>
         <section className="company-cta">
           <div className="container">
             <div className="cta-content">
@@ -342,7 +347,7 @@ const Company = () => {
             </div>
           </div>
         </section>
-      </ScrollFadeSection>
+      </div>
     </main>
   );
 };

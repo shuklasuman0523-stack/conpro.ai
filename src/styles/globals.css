@@ -116,9 +116,9 @@ main {
 }
 
 .main-content {
-  margin-top: 5%;
+  margin-top: 0;
   flex: 1;
-  min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 80px);
 }
 
 /* Page Hero Section */

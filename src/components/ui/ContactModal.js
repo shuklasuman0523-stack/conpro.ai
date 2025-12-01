@@ -46,8 +46,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-content">
+      <div className="modal-content">
           <h2 className="modal-title">Contact Us</h2>
           <p className="modal-description">
             To subscribe to this website, please enter your email address here. We
@@ -118,7 +117,8 @@ const ContactModal = ({ isOpen, onClose }) => {
               </button>
             </div>
           </form>
-        </div>
+        
+      
       </div>
     </div>
   );

@@ -1,21 +1,19 @@
 import React from 'react';
 import { Testimonials as TestimonialsSection } from '../components/sections';
-import { ScrollFadeSection } from '../components/ui';
+import { HeroVideoBackground } from '../components/ui';
 
 const Testimonials = () => {
   return (
     <div className="page">
-      <ScrollFadeSection>
-        <div className="page-hero">
+      <HeroVideoBackground className="page-hero">
+        <div className="container">
           <h1 className="section-title">Client Testimonials</h1>
           <p className="section-subtitle">
             Hear what our clients say about their experience with ConPro.AI
           </p>
         </div>
-      </ScrollFadeSection>
-      <ScrollFadeSection>
-        <TestimonialsSection />
-      </ScrollFadeSection>
+      </HeroVideoBackground>
+      <TestimonialsSection />
     </div>
   );
 };

@@ -1,31 +1,10 @@
-import { useEffect, useState } from 'react';
+// Parallax hooks disabled - no scroll effects
 
-export const useParallax = (speed: number = 0.5) => {
-  const [offsetY, setOffsetY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setOffsetY(window.pageYOffset);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return offsetY * speed;
+export const useParallax = () => {
+  return 0; // Always return 0 - no parallax effect
 };
 
 export const useParallaxMultiple = (elements: { speed: number }[]) => {
-  const [offsetY, setOffsetY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setOffsetY(window.pageYOffset);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return elements.map(element => offsetY * element.speed);
+  return elements.map(() => 0); // Always return 0 for all elements
+};
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ParallaxSection from '../components/ui/ParallaxSection';
+import { HeroVideoBackground } from '../components/ui';
 import emailjs from 'emailjs-com';
 import '../styles/careers.css';
 
@@ -63,12 +64,12 @@ const Careers = () => {
 
   return (
     <main className="careers-page">
-      <ParallaxSection speed={0.2} direction="up" className="page-hero">
+      <HeroVideoBackground className="page-hero">
         <div className="container">
           <h1 className="section-title">Careers at ConPro.AI</h1>
           <p className="section-subtitle">We're building the future of AI in enterprise — come join us.</p>
         </div>
-      </ParallaxSection>
+      </HeroVideoBackground>
 
       <section className="careers-content container">
         <div className="careers-intro">

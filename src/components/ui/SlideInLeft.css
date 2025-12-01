@@ -1,0 +1,30 @@
+.slide-in-left {
+  will-change: transform, opacity;
+}
+
+.slide-in-left.visible {
+  animation: slideInLeftSmooth 0.6s ease-out forwards;
+}
+
+@keyframes slideInLeftSmooth {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Enhanced smooth transitions */
+.slide-in-left {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Ensure elements start hidden */
+.slide-in-left:not(.visible) {
+  transform: translateX(-100px);
+  opacity: 0;
+}

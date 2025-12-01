@@ -5,19 +5,19 @@ const About = () => {
     {
       name: 'Dr. Sarah Chen',
       role: 'CEO & Co-Founder',
-      image: '👩‍💼',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face&auto=format',
       description: 'PhD in AI from MIT, former Google AI researcher'
     },
     {
       name: 'Alex Rodriguez',
       role: 'CTO & Co-Founder',
-      image: '👨‍💻',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format',
       description: 'Expert in ML systems, ex-Tesla Autopilot team'
     },
     {
       name: 'Maya Patel',
       role: 'Head of AI Research',
-      image: '👩‍🔬',
+      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face&auto=format',
       description: 'Published researcher in neural networks and deep learning'
     }
   ];
@@ -30,7 +30,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="about">
+    <section id="about" className="about dark-bg">
       <div className="container">
         <div className="about-content">
           <div className="about-text">
@@ -86,7 +86,9 @@ const About = () => {
           <div className="team-grid">
             {teamMembers.map((member, index) => (
               <div key={index} className="team-card">
-                <div className="member-avatar">{member.image}</div>
+                <div className="member-avatar">
+                  <img src={member.image} alt={member.name} />
+                </div>
                 <h4 className="member-name">{member.name}</h4>
                 <p className="member-role">{member.role}</p>
                 <p className="member-description">{member.description}</p>

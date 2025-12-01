@@ -3,16 +3,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-md) var(--spacing-xl);
-  border-radius: var(--radius-md);
+  padding: 12px 30px;
+  font-size: 1rem;
   font-weight: 600;
+  text-align: center;
   text-decoration: none;
-  border: none;
+  border-radius: 50px;
+  border: 1px solid transparent;
   cursor: pointer;
-  transition: var(--transition-normal);
-  font-size: var(--font-size-sm);
-  position: relative;
-  outline: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .btn:focus {
@@ -27,20 +29,39 @@
 
 /* Button Variants */
 .btn-primary {
-  background: var(--gradient-primary);
-  color: var(--text-primary);
-  box-shadow: none !important;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  
+    font-weight: 10;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #8B5CF6;
+      border-radius: 8px;
 }
 
 .btn-primary:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: none !important;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  background-color: #8b5cf6;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  margin-left: 8px;
+    border-radius: 8px;
+    
+    font-weight: 10;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #8B5CF6;
 }
 
 .btn-secondary:hover:not(:disabled) {
@@ -231,26 +252,7 @@
   line-height: 1.6;
 }
 
-/* Reveal on scroll utility */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.48,-0.19,.55,1.18);
-  will-change: opacity, transform;
-}
-.reveal-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Scroll Fade Section - Content fades as user scrolls past */
-.scroll-fade-section {
-  opacity: var(--section-opacity, 1);
-  /* Removed scroll-driven blur to keep content sharp during scroll */
-  filter: none;
-  transition: opacity 0.3s ease-out;
-  will-change: opacity;
-}
+/* Scroll effects disabled - all animations removed */
 
 /* Blog / Article card hover parallax */
 .blog-card {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollFadeSection } from '../components/ui';
+import { HeroVideoBackground } from '../components/ui';
 import '../styles/solutions.css';
 
 const Solutions = () => {
@@ -213,8 +213,10 @@ const Solutions = () => {
 
   return (
     <main className="solutions-page">
-      <ScrollFadeSection>
-        <section className="page-hero solutions-hero">
+        <HeroVideoBackground 
+          className="page-hero solutions-hero"
+          videoSrc="https://bitbet33-images-apne1.s3.ap-northeast-1.amazonaws.com/3141208-uhd_3840_2160_25fps.mp4"
+        >
           <div className="container">
             <p className="section-badge">INDUSTRY SOLUTIONS</p>
             <h1 className="section-title">AI Solutions Tailored to Your Industry</h1>
@@ -223,13 +225,11 @@ const Solutions = () => {
               of your industry, delivering measurable results from day one
             </p>
           </div>
-        </section>
-      </ScrollFadeSection>
+        </HeroVideoBackground>
 
       <section className="solutions-list">
         {solutions.map((solution, index) => (
-          <ScrollFadeSection key={solution.id}>
-            <div className={`solution-section ${index % 2 === 1 ? 'alternate' : ''}`}>
+            <div className={`solution-section ${index % 2 === 1 ? 'alternate' : ''}`} key={solution.id}>
               <div className="container">
                 <div className="solution-content">
                   <div className="solution-header">
@@ -295,11 +295,9 @@ const Solutions = () => {
                 </div>
               </div>
             </div>
-          </ScrollFadeSection>
         ))}
       </section>
 
-      <ScrollFadeSection>
         <section className="solutions-custom">
           <div className="container">
             <div className="custom-content">
@@ -323,7 +321,6 @@ const Solutions = () => {
             </div>
           </div>
         </section>
-      </ScrollFadeSection>
     </main>
   );
 };

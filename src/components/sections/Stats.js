@@ -2,7 +2,7 @@ import React from 'react';
 
 const Stats = () => {
   return (
-    <section className="stats">
+    <section className="stats dark-bg">
       <div className="container">
         <div className="stats-content">
           <div className="stats-text">

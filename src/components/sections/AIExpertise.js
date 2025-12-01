@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ParallaxSection from '../ui/ParallaxSection';
-import ScrollFadeElement from '../ui/ScrollFadeElement';
+
 import aiNetworkDiagram from '../../assets/images/ai-chatbot-diagram.png';
 
 const AIExpertise = () => {
   const navigate = useNavigate();
   return (
-    <section className="ai-expertise reveal-on-scroll">
+    <section className="ai-expertise reveal-on-scroll dark-bg">
       <div className="container">
         {/* Mobile heading above image */}
         <div className="mobile-ai-expertise-heading">
@@ -26,7 +26,7 @@ const AIExpertise = () => {
               />
             </div>
           </ParallaxSection>
-          <ScrollFadeElement className="expertise-text">
+          <div className="expertise-text">
             <div className="section-header">
               <ParallaxSection speed={0.3} direction="up">
                 <p className="section-category desktop-only reveal-on-scroll">OUR AI EXPERTISE</p>
@@ -54,7 +54,7 @@ const AIExpertise = () => {
                 Learn More
               </button>
             </div>
-          </ScrollFadeElement>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ParallaxSection from '../ui/ParallaxSection';
-import ScrollFadeElement from '../ui/ScrollFadeElement';
+
 
 const Testimonials = () => {
   const [rotation, setRotation] = useState(0);
@@ -111,7 +111,7 @@ const Testimonials = () => {
         </ParallaxSection>
         
         <div className="testimonials-container">
-          <ScrollFadeElement className={`testimonials-grid ${isAnimating ? (animationDirection === 'reverse' ? 'animating-reverse' : 'animating') : ''}`}>
+          <div className={`testimonials-grid ${isAnimating ? (animationDirection === 'reverse' ? 'animating-reverse' : 'animating') : ''}`}>
             {displayTestimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.id}-${index}`}
@@ -148,7 +148,7 @@ const Testimonials = () => {
                 <div className="card-background"></div>
               </div>
             ))}
-          </ScrollFadeElement>
+          </div>
           
           {/* Navigation Arrows */}
           <div className="testimonials-navigation">

@@ -185,7 +185,7 @@
 
 .stat-label {
   font-size: 0.875rem;
-  color: #718096;
+  color: #333 !important; /* Darker color for better visibility */
 }
 
 /* Hero Visual */
