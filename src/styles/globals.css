@@ -9,10 +9,10 @@
   --color-error: #EF4444;
   
   /* Background Colors */
-  --bg-primary: #0f0f1a;
-  --bg-secondary: #1e1b4b;
-  --bg-card: rgba(15, 15, 26, 0.8);
-  --bg-overlay: rgba(15, 15, 26, 0.95);
+  --bg-primary: #1e3a8a;
+  --bg-secondary: #2563eb;
+  --bg-card: rgba(30, 58, 138, 0.8);
+  --bg-overlay: rgba(30, 58, 138, 0.95);
   
   /* Text Colors */
   --text-primary: #ffffff;
