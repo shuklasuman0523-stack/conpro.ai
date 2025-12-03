@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "ConPro.AI - Modern AI-powered website",
   "main": "src/index.js",
-  "scripts": {
+  "homepage": "https://www.conpro.ai",
+  "private": true,
+  "scripts": { 
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "react-new-version -d build"
+    "deploy": "gh-pages -d build"
   },
   "keywords": [
     "react",
@@ -20,6 +22,7 @@
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
+    "@babel/traverse": "^7.28.5",
     "emailjs-com": "^3.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -32,11 +35,12 @@
     "@babel/preset-react": "^7.22.0",
     "babel-loader": "^9.1.0",
     "css-loader": "^6.8.0",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.0",
     "webpack": "^5.88.0",
     "webpack-cli": "^5.1.0",
-    "webpack-dev-server": "^4.15.0"
+    "webpack-dev-server": "^5.2.2"
   },
   "browserslist": {
     "production": [
