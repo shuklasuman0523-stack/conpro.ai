@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components';
-import { Home, About, Services, Products, Testimonials, Careers, CaseStudies, Blog, Solutions, Company } from './pages';
+import { Home, About, Services, Products, Testimonials, Careers, CaseStudies, Blog, Solutions, Company, AgenticAIConsulting, ProductStrategy, ProductDevelopment, Privacy, Terms } from './pages';
 import CaseStudyDetail from './pages/CaseStudyDetail';
 import './styles/index.css';
 
@@ -22,6 +22,11 @@ function App() {
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/company" element={<Company />} />
+            <Route path="/agentic-ai-consulting" element={<AgenticAIConsulting />} />
+            <Route path="/product-strategy" element={<ProductStrategy />} />
+            <Route path="/product-development" element={<ProductDevelopment />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
           </Routes>
         </Layout>
       </div>

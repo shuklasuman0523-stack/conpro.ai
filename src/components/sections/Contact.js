@@ -17,9 +17,10 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We\'ll get back to you soon.');
+    const subject = `Contact Form: ${formData.company} - ${formData.name}`;
+    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ACompany: ${formData.company}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+    window.location.href = `mailto:hello@conpro.ai?subject=${subject}&body=${body}`;
+    alert('Opening your email client to send the message...');
     setFormData({ name: '', email: '', company: '', message: '' });
   };
 
@@ -32,7 +33,7 @@ const Contact = () => {
             Ready to transform your business with AI? Contact us for a personalized consultation
           </p>
         </div>
-        
+
         <div className="contact-content">
           <div className="contact-info">
             <div className="contact-card">
@@ -41,21 +42,20 @@ const Contact = () => {
               <p>hello@conpro.ai</p>
               <p>support@conpro.ai</p>
             </div>
-            
+
             <div className="contact-card">
               <div className="contact-icon">📞</div>
               <h3>Call Us</h3>
               <p>+1 (555) 123-4567</p>
               <p>Mon-Fri, 9AM-6PM PST</p>
             </div>
-            
+
             <div className="contact-card">
               <div className="contact-icon">📍</div>
-              <h3>Visit Us</h3>
-              <p>123 AI Innovation Drive</p>
-              <p>San Francisco, CA 94105</p>
+              <h3>Global Offices</h3>
+              <p>USA & India</p>
             </div>
-            
+
             <div className="contact-card">
               <div className="contact-icon">💬</div>
               <h3>Live Chat</h3>
@@ -63,11 +63,11 @@ const Contact = () => {
               <button className="btn btn-outline" onClick={() => window.dispatchEvent(new Event('openContactModal'))}>Start Chat</button>
             </div>
           </div>
-          
+
           <div className="contact-form-container">
             <form className="contact-form" onSubmit={handleSubmit}>
               <h3>Send us a Message</h3>
-              
+
               <div className="form-group">
                 <label htmlFor="name">Full Name *</label>
                 <input
@@ -80,7 +80,7 @@ const Contact = () => {
                   placeholder="Enter your full name"
                 />
               </div>
-              
+
               <div className="form-group">
                 <label htmlFor="email">Email Address *</label>
                 <input
@@ -93,7 +93,7 @@ const Contact = () => {
                   placeholder="Enter your email address"
                 />
               </div>
-              
+
               <div className="form-group">
                 <label htmlFor="company">Company</label>
                 <input
@@ -105,7 +105,7 @@ const Contact = () => {
                   placeholder="Enter your company name"
                 />
               </div>
-              
+
               <div className="form-group">
                 <label htmlFor="message">Message *</label>
                 <textarea
@@ -118,11 +118,11 @@ const Contact = () => {
                   placeholder="Tell us about your AI needs and how we can help"
                 ></textarea>
               </div>
-              
+
               <button type="submit" className="btn btn-primary btn-large">
                 Send Message
               </button>
-              
+
               <p className="form-note">
                 By submitting this form, you agree to our Privacy Policy and Terms of Service.
               </p>

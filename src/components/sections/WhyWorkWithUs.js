@@ -7,9 +7,9 @@ const WhyWorkWithUs = () => {
 
   // Target values
   const targets = {
-    experience: 5,
+    experience: 18,
     projects: 100,
-    engineers: 80
+    engineers: 50
   };
 
   // Intersection Observer to detect when section is in view
@@ -82,7 +82,7 @@ const WhyWorkWithUs = () => {
           </div>
           <div className="stat-item">
             <div className="stat-number">{counts.engineers}+</div>
-            <div className="stat-text">Qualified AI Engineer</div>
+            <div className="stat-text">Scalable team of AI engineers</div>
           </div>
         </div>
       </div>

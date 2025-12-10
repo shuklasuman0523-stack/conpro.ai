@@ -9,3 +9,8 @@ export { default as CaseStudies } from './CaseStudies';
 export { default as Blog } from './Blog';
 export { default as Solutions } from './Solutions';
 export { default as Company } from './Company';
+export { default as AgenticAIConsulting } from './AgenticAIConsulting';
+export { default as ProductStrategy } from './ProductStrategy';
+export { default as ProductDevelopment } from './ProductDevelopment';
+export { default as Privacy } from './Privacy';
+export { default as Terms } from './Terms';

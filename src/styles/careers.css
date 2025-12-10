@@ -1,6 +1,6 @@
 /* Careers page specific styles */
 .careers-page .careers-content {
-  padding: 3rem 1rem 4rem;
+  padding: 4rem 1rem;
 }
 
 .careers-page .careers-intro {
@@ -26,6 +26,13 @@
   align-items: flex-start;
   width: 100%;
   margin-top: 2rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .careers-page .careers-content {
+    padding: 2rem 1rem;
+  }
 }
 
 .careers-page .careers-form {

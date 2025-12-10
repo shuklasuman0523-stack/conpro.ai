@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HeroVideoBackground } from '../components/ui';
+import { VideoUpload } from '../components';
 import '../styles/blog.css';
 
 const Blog = () => {
@@ -143,26 +144,30 @@ const Blog = () => {
   ];
 
   const featuredPost = blogPosts[0];
-  const filteredPosts = selectedCategory === 'all' 
-    ? blogPosts.slice(1) 
+  const filteredPosts = selectedCategory === 'all'
+    ? blogPosts.slice(1)
     : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
     <main className="blog-page">
       <div>
-        <HeroVideoBackground 
+        <HeroVideoBackground
           className="page-hero blog-hero"
           videoSrc="https://bitbet33-images-apne1.s3.ap-northeast-1.amazonaws.com/4828605-uhd_4096_2160_25fps.mp4"
         >
           <div className="container">
-            <p className="section-badge">INSIGHTS & UPDATES</p>
-            <h1 className="section-title">ConPro.AI Blog</h1>
+            <p className="section-badge">USE CASES & UPDATES</p>
+            <h1 className="section-title">Use Cases & Insights</h1>
             <p className="section-subtitle">
-              Expert perspectives on AI, industry trends, and practical strategies 
+              Real-world applications, expert perspectives, and practical strategies
               for digital transformation
             </p>
           </div>
         </HeroVideoBackground>
+      </div>
+
+      <div>
+        <VideoUpload />
       </div>
 
       <div>
@@ -249,13 +254,13 @@ const Blog = () => {
             <div className="newsletter-content">
               <h2>Stay Informed</h2>
               <p>
-                Get the latest AI insights, industry trends, and ConPro.AI updates 
+                Get the latest AI insights, industry trends, and ConPro.AI updates
                 delivered to your inbox weekly
               </p>
               <div className="newsletter-form">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email address" 
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
                   className="newsletter-input"
                 />
                 <button className="btn-primary">Subscribe</button>

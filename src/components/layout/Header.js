@@ -50,45 +50,56 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
       <div className="container">
-        {/* Hide logo when mobile nav is open */}
-        {!isMenuOpen && (
-          <div className="nav-brand">
-            <Link to="/" className="logo">ConPro<span className="logo-accent">.AI</span></Link>
-          </div>
-        )}
+        <div className="nav-brand">
+          <Link to="/" className="logo" onClick={() => setIsMenuOpen(false)}>ConPro<span className="logo-accent">.AI</span></Link>
+        </div>
+
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-          {/* Cross (close) button, only visible when nav is open */}
-          {isMenuOpen && (
+          <div className="mobile-nav-header mobile-only" style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            width: '100%',
+            marginBottom: '2rem',
+            paddingBottom: '1rem',
+            borderBottom: '1px solid rgba(255,255,255,0.1)'
+          }}>
+            {/* Logo in mobile menu */}
+            <div className="nav-brand mobile-only">
+              <Link to="/" className="logo" onClick={() => setIsMenuOpen(false)}>ConPro<span className="logo-accent">.AI</span></Link>
+            </div>
+
+            {/* Close button */}
             <button
               className="menu-close"
               onClick={() => setIsMenuOpen(false)}
               aria-label="Close navigation menu"
               style={{
-                position: 'absolute',
-                top: 8,
-                right: 10,
-                zIndex: 10001,
-                background: 'none',
+                background: 'rgba(255,255,255,0.1)',
                 border: 'none',
-                padding: 0,
+                borderRadius: '50%',
+                padding: '8px',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: 32,
-                height: 32,
+                width: 40,
+                height: 40,
+                color: 'white'
               }}
             >
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="5" y1="5" x2="17" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                <line x1="17" y1="5" x2="5" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </button>
-          )}
+          </div>
+
           <ul className="nav-links">
             <li><Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
             <li><Link to="/solutions" className={`nav-link ${isActive('/solutions') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Solutions</Link></li>
-            <li><Link to="/products" className={`nav-link ${isActive('/products') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Products</Link></li>
+
             <li><Link to="/services" className={`nav-link ${isActive('/services') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Services</Link></li>
             <li><Link to="/case-studies" className={`nav-link ${isActive('/case-studies') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Case Studies</Link></li>
             <li><Link to="/blog" className={`nav-link ${isActive('/blog') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
@@ -98,7 +109,6 @@ const Header = () => {
             <button
               onClick={() => {
                 setIsMenuOpen(false);
-                // Use requestAnimationFrame for smoother transition
                 requestAnimationFrame(() => {
                   setTimeout(() => setIsContactModalOpen(true), 80);
                 });
@@ -110,23 +120,21 @@ const Header = () => {
           </div>
         </nav>
 
-        <ContactModal 
-          isOpen={isContactModalOpen} 
-          onClose={() => setIsContactModalOpen(false)} 
+        <ContactModal
+          isOpen={isContactModalOpen}
+          onClose={() => setIsContactModalOpen(false)}
         />
-        
-        {/* Hamburger menu button (hidden when open) */}
-        {!isMenuOpen && (
-          <button 
-            className="menu-toggle"
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Open navigation menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        )}
+
+        {/* Hamburger menu button */}
+        <button
+          className="menu-toggle"
+          onClick={() => setIsMenuOpen(true)}
+          aria-label="Open navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
   );

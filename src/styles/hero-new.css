@@ -190,7 +190,7 @@
 
 .hero-buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
   margin-bottom: 3rem;
   margin-left: 2rem;
@@ -330,10 +330,11 @@
   }
   
   .hero-buttons {
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.75rem;
     margin-left: 0;
     align-items: center;
+    justify-content: center;
     width: 100%;
     padding: 0 1rem;
   }
@@ -341,9 +342,9 @@
   .hero-btn {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
-    min-width: 160px;
-    max-width: 200px;
-    width: 100%;
+    min-width: auto;
+    max-width: none;
+    width: auto;
     overflow: visible;
     position: relative;
     z-index: 10;

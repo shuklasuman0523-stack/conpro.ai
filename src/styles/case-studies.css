@@ -60,7 +60,7 @@
   margin-bottom: 10px;
 }
 
-.stat-label {
+.hero-stats .stat-label {
   font-size: 0.95rem;
   opacity: 0.9;
   color: white !important; /* White color for better visibility */
@@ -68,7 +68,7 @@
 
 /* Filters */
 .case-studies-filters {
-  padding: 40px 0;
+  padding: 4rem 0;
   background: white;
   border-bottom: 1px solid #eee;
   position: sticky;
@@ -109,7 +109,7 @@
 
 /* Case Study Cards */
 .case-studies-list {
-  padding: 60px 0;
+  padding: 4rem 0;
   background: #f8f9fa;
 }
 
@@ -282,12 +282,15 @@
 
 /* CTA */
 .case-study-cta {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
   margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 .case-studies-cta {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   text-align: center;
@@ -343,5 +346,46 @@
   .filter-btn {
     padding: 8px 18px;
     font-size: 0.85rem;
+  }
+
+  .case-study-testimonial {
+    padding: 20px;
+  }
+
+  .case-study-testimonial blockquote {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .case-study-testimonial cite {
+    font-size: 0.9rem;
+  }
+
+  .case-study-cta {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .case-study-cta .btn-primary,
+  .case-study-cta .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cta-buttons .btn-primary,
+  .cta-buttons .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .case-studies-filters,
+  .case-studies-list,
+  .case-studies-cta {
+    padding: 2rem 0;
   }
 }

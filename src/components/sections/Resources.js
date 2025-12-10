@@ -33,7 +33,7 @@ const Resources = () => {
   ];
 
   // Mobile swipe state
-  const [activeIndex, setActiveInidex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
 
@@ -68,7 +68,12 @@ const Resources = () => {
         </div>
         <div className="resource-categories reveal-on-scroll">
           {categories.map((category, index) => (
-            <button key={index} className={`category-btn ${index === 0 ? 'active' : ''}`} onClick={() => setActiveInidex(index)} aria-pressed={activeIndex === index}>
+            <button
+              key={index}
+              className={`category-btn ${activeIndex === index ? 'active' : ''}`}
+              onClick={() => setActiveIndex(index)}
+              aria-pressed={activeIndex === index}
+            >
               {category}
             </button>
           ))}
@@ -109,23 +114,17 @@ const Resources = () => {
               }}
             >
               <div className="article-image">
-                <img src={articles[activeIndex].image} alt={articles[activeIndex].title} />
+                <img src={articles[Math.min(activeIndex, articles.length - 1)].image} alt={articles[Math.min(activeIndex, articles.length - 1)].title} />
               </div>
-                <div className="article-content">
-                <h3 className="article-title">{articles[activeIndex].title}</h3>
-                <p className="article-description">{articles[activeIndex].description}</p>
-                <button
+              <div className="article-content">
+                <h3 className="article-title">{articles[Math.min(activeIndex, articles.length - 1)].title}</h3>
+                <p className="article-description">{articles[Math.min(activeIndex, articles.length - 1)].description}</p>
+                <Link
+                  to={`/case-studies/${articles[Math.min(activeIndex, articles.length - 1)].id}`}
                   className="read-more-btn"
-                  onClick={() => {
-                    if (typeof window.openContactModal === 'function') {
-                      window.openContactModal();
-                      return;
-                    }
-                    window.dispatchEvent(new Event('openContactModal'));
-                  }}
                 >
                   READ MORE →
-                </button>
+                </Link>
               </div>
             </div>
             {/* Dots */}

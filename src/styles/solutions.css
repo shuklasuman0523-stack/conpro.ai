@@ -43,7 +43,7 @@
 }
 
 .solution-section {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: #ffffff;
   opacity: 1 !important; /* Prevent fade effects on white backgrounds */
 }
@@ -135,7 +135,7 @@
   }
 }
 
-.stat-label {
+.solution-stats .stat-label {
   display: block;
   font-size: 1rem;
   color: #1a1a1a !important;
@@ -272,7 +272,7 @@
 
 /* Custom Solution Section */
 .solutions-custom {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   text-align: center;
@@ -337,8 +337,19 @@
   
   .solution-cta .btn-primary,
   .solution-cta .btn-secondary {
-    width: auto;
-    max-width: 300px;
-    border-radius: 50px;
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+  
+  .custom-content .btn-primary {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .solution-section,
+  .solutions-custom {
+    padding: 2rem 0;
   }
 }

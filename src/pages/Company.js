@@ -1,52 +1,55 @@
 import React from 'react';
 import { HeroVideoBackground } from '../components/ui';
+import { ClientJourney } from '../components';
 import '../styles/company.css';
 
 const Company = () => {
   const timeline = [
     {
-      year: '2020',
-      title: 'Foundation',
-      description: 'ConPro.AI founded by Dr. Sarah Chen and Alex Rodriguez with a mission to democratize artificial intelligence for businesses of all sizes.'
-    },
-    {
-      year: '2021',
-      title: 'First Major Client',
-      description: 'Secured partnership with MidAtlantic Health System, delivering $1.8M in annual savings through AI-powered prior authorization.'
-    },
-    {
-      year: '2022',
-      title: 'Series A Funding',
-      description: 'Raised $15M Series A led by Sequoia Capital to expand product offerings and engineering team.'
-    },
-    {
-      year: '2023',
-      title: 'Market Expansion',
-      description: 'Expanded into financial services and retail sectors. Crossed 200 enterprise clients milestone.'
-    },
-    {
-      year: '2024',
-      title: 'Global Presence',
-      description: 'Opened offices in London and Singapore. Launched AI solutions in 12 additional industries.'
-    },
-    {
       year: '2025',
+      title: 'Foundation',
+      description: 'ConPro.AI established by Ashish and Dr. Sarah Chen to democratize intelligent solutions.'
+    },
+    {
+      year: '2026',
+      title: 'First Major Client',
+      description: 'Targeting partnership with major health systems to deliver significant savings through AI-powered prior authorization.'
+    },
+    {
+      year: '2027',
+      title: 'Market Expansion',
+      description: 'Expansion into financial services and retail sectors. aiming for 200 enterprise clients milestone.'
+    },
+    {
+      year: '2028',
+      title: 'Global Presence',
+      description: 'Opening offices in strategic global locations. Launching AI solutions in additional industries.'
+    },
+    {
+      year: '2029',
       title: 'Industry Leader',
-      description: 'Surpassed 500 clients, $12.5M+ in total client savings. Named "AI Innovator of the Year" by TechCrunch.'
+      description: 'Targeting 500 clients and industry recognition as a top AI Innovator.'
     }
   ];
 
   const leadership = [
     {
+      name: 'Ashish',
+      role: 'Founder & CEO',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format',
+      bio: 'Visionary leader with 18+ years of experience driving AI innovation and enterprise transformation.',
+      linkedin: '#'
+    },
+    {
       name: 'Dr. Sarah Chen',
-      role: 'CEO & Co-Founder',
+      role: 'Co-Founder & Chief Scientist',
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face&auto=format',
-      bio: 'PhD in Artificial Intelligence from MIT. Former lead researcher at Google AI, where she pioneered neural network architectures for healthcare applications. Published 40+ papers in top-tier AI conferences.',
+      bio: 'PhD in Artificial Intelligence from MIT. Former lead researcher at Google AI, where she pioneered neural network architectures for healthcare applications.',
       linkedin: '#'
     },
     {
       name: 'Alex Rodriguez',
-      role: 'CTO & Co-Founder',
+      role: 'CTO',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format',
       bio: 'Expert in machine learning systems and autonomous technology. Previously led engineering at Tesla Autopilot team. MS in Computer Science from Stanford University.',
       linkedin: '#'
@@ -125,35 +128,23 @@ const Company = () => {
 
   const offices = [
     {
-      city: 'San Francisco',
-      type: 'Headquarters',
-      address: '123 Market Street, Suite 400',
+      city: 'USA',
+      type: 'Global Headquarters',
+      address: 'San Francisco, CA',
+      employees: '100+'
+    },
+    {
+      city: 'India',
+      type: 'Innovation Hub',
+      address: 'Bangalore, India',
       employees: '150+'
-    },
-    {
-      city: 'New York',
-      type: 'East Coast Hub',
-      address: '456 Park Avenue, Floor 12',
-      employees: '45+'
-    },
-    {
-      city: 'London',
-      type: 'EMEA Headquarters',
-      address: '789 Canary Wharf',
-      employees: '30+'
-    },
-    {
-      city: 'Singapore',
-      type: 'APAC Headquarters',
-      address: '321 Marina Bay',
-      employees: '25+'
     }
   ];
 
   return (
     <main className="company-page">
       <div>
-        <HeroVideoBackground 
+        <HeroVideoBackground
           className="page-hero company-hero"
           videoSrc="https://bitbet33-images-apne1.s3.ap-northeast-1.amazonaws.com/6153734-uhd_4096_2160_25fps.mp4"
         >
@@ -161,7 +152,7 @@ const Company = () => {
             <p className="section-badge">ABOUT CONPRO.AI</p>
             <h1 className="section-title">Building the Future of Intelligent Business</h1>
             <p className="section-subtitle">
-              We're on a mission to make advanced AI accessible, reliable, and transformative 
+              We're on a mission to make advanced AI accessible, reliable, and transformative
               for organizations worldwide
             </p>
           </div>
@@ -174,9 +165,9 @@ const Company = () => {
             <div className="mission-content">
               <h2>Our Mission</h2>
               <p className="mission-statement">
-                To democratize artificial intelligence by creating solutions that are powerful 
-                enough for the Fortune 500, yet accessible enough for mid-market businesses—empowering 
-                every organization to make better decisions, work more efficiently, and unlock 
+                To democratize artificial intelligence by creating solutions that are powerful
+                enough for the Fortune 500, yet accessible enough for mid-market businesses—empowering
+                every organization to make better decisions, work more efficiently, and unlock
                 new possibilities for innovation.
               </p>
               <div className="mission-stats">
@@ -206,39 +197,40 @@ const Company = () => {
         <section className="company-story">
           <div className="container">
             <h2>Our Story</h2>
-            <p className="story-intro">
-              ConPro.AI was born from a simple observation: while AI technology was advancing 
-              rapidly, most businesses couldn't effectively leverage it. Complex implementations, 
-              astronomical costs, and lack of domain expertise created a massive gap between 
-              AI's potential and its practical application.
-            </p>
-            <p className="story-intro">
-              Our founders—Dr. Sarah Chen from Google AI and Alex Rodriguez from Tesla—saw an 
-              opportunity to bridge this gap. They assembled a world-class team of AI researchers, 
-              engineers, and industry experts to build solutions that were not just technically 
-              sophisticated, but also practical, accessible, and results-driven.
-            </p>
+            <div className="story-content">
+              <div className="story-image-column">
+                <div className="story-image-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format"
+                    alt="Ashish - Founder & CEO"
+                    className="story-image"
+                  />
+                </div>
+              </div>
+              <div className="story-text-column">
+                <p className="story-intro">
+                  ConPro.AI was born from a simple observation: while AI technology was advancing
+                  rapidly, most businesses couldn't effectively leverage it. Complex implementations,
+                  astronomical costs, and lack of domain expertise created a massive gap between
+                  AI's potential and its practical application.
+                </p>
+                <p className="story-intro">
+                  Our founder Ashish, along with Dr. Sarah Chen, saw an opportunity to bridge this gap.
+                  With over 18 years of experience in AI and enterprise transformation, they assembled a
+                  world-class team to build solutions that are practical, accessible, and results-driven.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </div>
 
       <div>
-        <section className="company-timeline">
-          <div className="container">
-            <h2>Our Journey</h2>
-            <div className="timeline">
-              {timeline.map((item, index) => (
-                <div key={index} className="timeline-item">
-                  <div className="timeline-content">
-                    <div className="timeline-year">{item.year}</div>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ClientJourney
+          title="Our Journey"
+          subtitle="From foundation to industry leadership"
+          steps={timeline}
+        />
       </div>
 
       <div>
@@ -324,7 +316,7 @@ const Company = () => {
             <div className="cta-content">
               <h2>Join Us on This Journey</h2>
               <p>
-                Whether you're looking to transform your business with AI or want to be part of 
+                Whether you're looking to transform your business with AI or want to be part of
                 building the future, we'd love to hear from you.
               </p>
               <div className="cta-buttons">
