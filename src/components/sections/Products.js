@@ -36,7 +36,12 @@ const Products = () => {
 
         <div className="services-grid">
           {offerings.map((offering, index) => (
-            <div key={index} className="service-card text-center p-4">
+            <Link
+              to={offering.link}
+              key={index}
+              className="service-card text-center p-4 text-decoration-none"
+              style={{ display: 'block', color: 'inherit', textDecoration: 'none', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}
+            >
               <div className="service-image-container mb-4" style={{ height: '150px', overflow: 'hidden', borderRadius: '8px' }}>
                 <img src={offering.image} alt={offering.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
@@ -44,10 +49,10 @@ const Products = () => {
               <p className="service-description mb-4 text-muted">
                 {offering.description}
               </p>
-              <Link to={offering.link} className="btn-primary mt-3 d-inline-block">
+              <span className="btn-primary mt-3 d-inline-block">
                 Learn More
-              </Link>
-            </div>
+              </span>
+            </Link>
           ))}
         </div>
       </div>

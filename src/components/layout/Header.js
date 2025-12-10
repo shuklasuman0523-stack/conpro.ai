@@ -7,6 +7,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const location = useLocation();
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
 
   const isActive = (path) => location.pathname === path;
 
@@ -99,6 +100,75 @@ const Header = () => {
             <li><Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Home</Link></li>
             <li><Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
             <li><Link to="/solutions" className={`nav-link ${isActive('/solutions') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Solutions</Link></li>
+            <li
+              className="nav-item-dropdown"
+              onMouseEnter={() => window.innerWidth > 768 && setIsProductsOpen(true)}
+              onMouseLeave={() => window.innerWidth > 768 && setIsProductsOpen(false)}
+            >
+              <div className="nav-link-wrapper" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <Link
+                  to="/products"
+                  className={`nav-link ${isActive('/products') ? 'active' : ''}`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Products
+                </Link>
+                <button
+                  className="dropdown-toggle mobile-only"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setIsProductsOpen(!isProductsOpen);
+                  }}
+                  aria-label="Toggle Products menu"
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    padding: '4px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    transform: isProductsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                    transition: 'transform 0.3s ease'
+                  }}
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+              </div>
+
+              <ul className={`dropdown-menu ${isProductsOpen ? 'open' : ''}`}>
+                <li>
+                  <Link
+                    to="/agentic-ai-consulting"
+                    className={`dropdown-link ${isActive('/agentic-ai-consulting') ? 'active' : ''}`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Agentic AI Consulting
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/product-strategy"
+                    className={`dropdown-link ${isActive('/product-strategy') ? 'active' : ''}`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Product Strategy & Management
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/product-development"
+                    className={`dropdown-link ${isActive('/product-development') ? 'active' : ''}`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Product Development
+                  </Link>
+                </li>
+              </ul>
+            </li>
 
             <li><Link to="/services" className={`nav-link ${isActive('/services') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Services</Link></li>
             <li><Link to="/case-studies" className={`nav-link ${isActive('/case-studies') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Case Studies</Link></li>

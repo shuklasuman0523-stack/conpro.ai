@@ -1,63 +1,118 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HeroVideoBackground } from '../components/ui';
-import { Contact, ClientJourney } from '../components';
+import '../styles/services-pages.css';
 
 const AgenticAIConsulting = () => {
-    const journeySteps = [
-        {
-            title: "AI Readiness Assessment",
-            description: "We evaluate your current data infrastructure, technical capabilities, and operational workflows to determine your readiness for autonomous AI integration."
-        },
-        {
-            title: "Opportunity Identification",
-            description: "Collaboratively, we pinpoint high-impact use cases where agentic AI can automate complex tasks, improve decision-making, and drive significant ROI."
-        },
-        {
-            title: "Agent Design & Governance",
-            description: "We architect the behavior, roles, and permission systems for your AI agents, establishing robust governance frameworks to ensure safe and effective autonomy."
-        },
-        {
-            title: "Prototype & Pilot",
-            description: "We develop a functional proof-of-concept to validate assumptions and demonstrate value in a controlled environment before full-scale deployment."
-        },
-        {
-            title: "Scale & Optimization",
-            description: "Deploying your agent workforce at scale, with continuous monitoring, fine-tuning, and learning loops to ensure they evolve with your business."
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    const openContact = () => {
+        if (typeof window.openContactModal === 'function') {
+            window.openContactModal();
+        } else {
+            window.dispatchEvent(new Event('openContactModal'));
         }
-    ];
+    };
 
     return (
-        <main className="agentic-ai-consulting-page">
-            <HeroVideoBackground className="page-hero">
+        <main className="service-page">
+            <HeroVideoBackground
+                className="page-hero"
+                videoSrc="https://bitbet33-images-apne1.s3.ap-northeast-1.amazonaws.com/8328046-uhd_3840_2160_25fps.mp4"
+            >
                 <div className="container">
-                    <h1 className="section-title">Agentic AI Consulting</h1>
-                    <p className="section-subtitle">
-                        Empower your enterprise with autonomous, intelligent workforce solutions.
-                    </p>
+                    <div className="service-hero-content">
+                        <h1 className="service-hero-title">Strategic AI Consulting to Transform Your Enterprise</h1>
+                        <p className="service-hero-subtitle">
+                            We help you adopt autonomous agents, automated workflows, and next-gen AI systems that scale with your business.
+                        </p>
+                        <button onClick={openContact} className="btn-glow">Book a Consultation</button>
+                    </div>
                 </div>
             </HeroVideoBackground>
 
-            <section className="service-details section-padding">
+            <section className="service-section">
                 <div className="container">
-                    <div className="content-block">
-                        <h2>The Future is Autonomous</h2>
-                        <p>
-                            Agentic AI represents the next leap in artificial intelligence—moving from chat interfaces to systems that can plan, reason, and execute tasks independently. Our consulting services guide you through this transformation, helping you build a digital workforce that augments human potential.
-                        </p>
-                        <p>
-                            We specialize in designing multi-agent systems that can handle complex workflows, from supply chain optimization to automated customer support, ensuring your business stays ahead of the curve.
-                        </p>
+                    <h2 className="service-section-title">What We Do</h2>
+                    <div className="service-grid">
+                        <div className="service-card">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop" alt="AI Readiness Assessments" className="service-card-image" />
+                            <h3 className="card-title">AI Readiness Assessments</h3>
+                            <p className="card-text">Comprehensive evaluation of your data infrastructure, processes, and capabilities to determine AI maturity.</p>
+                        </div>
+                        <div className="service-card">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format&fit=crop" alt="Agentic Automation Strategy" className="service-card-image" />
+                            <h3 className="card-title">Agentic Automation Strategy</h3>
+                            <p className="card-text">Designing specialized autonomous agents that can plan, execute, and adapt to complex tasks independently.</p>
+                        </div>
+                        <div className="service-card">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop" alt="Workflow Analysis & Optimization" className="service-card-image" />
+                            <h3 className="card-title">Workflow Analysis & Optimization</h3>
+                            <p className="card-text">Mapping current workflows to identify bottlenecks where AI agents can drive maximum efficiency.</p>
+                        </div>
+                        <div className="service-card">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop" alt="Integration with Systems" className="service-card-image" />
+                            <h3 className="card-title">Integration with Systems</h3>
+                            <p className="card-text">Seamlessly connecting AI agents with your existing ERP, CRM, and cloud infrastructure.</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <ClientJourney
-                title="Your Journey to Autonomy"
-                subtitle="A strategic roadmap to integrating Agentic AI into your organization"
-                steps={journeySteps}
-            />
+            <section className="service-section" style={{ background: 'rgba(255,255,255,0.02)' }}>
+                <div className="container">
+                    <h2 className="service-section-title">Value We Deliver</h2>
+                    <div className="service-grid">
+                        <div className="service-card">
+                            <ul className="check-list">
+                                <li>Reduced operational bottlenecks through intelligent automation</li>
+                                <li>Intelligent automation of complex work</li>
+                                <li>Improved decision-making speed and accuracy</li>
+                                <li>End-to-end setup of robust agent frameworks</li>
+                            </ul>
+                        </div>
+                        <div className="service-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <img
+                                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop"
+                                alt="Value Delivery"
+                                style={{ borderRadius: '1rem', width: '100%', height: 'auto', objectFit: 'cover' }}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <Contact />
+            <section className="service-section">
+                <div className="container">
+                    <h2 className="service-section-title">Why Choose Us</h2>
+                    <div className="workflow-steps">
+                        <div className="workflow-step">
+                            <h3 className="step-title">Multi-Agent Expertise</h3>
+                            <p className="card-text">Deep knowledge in coordinating complex agent ecosystems</p>
+                        </div>
+                        <div className="workflow-step">
+                            <h3 className="step-title">Enterprise-Grade</h3>
+                            <p className="card-text">Proven architectures that are secure and scalable</p>
+                        </div>
+                        <div className="workflow-step">
+                            <h3 className="step-title">Fast Deployment</h3>
+                            <p className="card-text">Agile methodology ensuring quick time-to-value</p>
+                        </div>
+                        <div className="workflow-step">
+                            <h3 className="step-title">Measurable ROI</h3>
+                            <p className="card-text">Focus on metrics that matter to your bottom line</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div className="cta-section">
+                <div className="container">
+                    <h2 className="service-section-title">Ready to Transform Your Enterprise?</h2>
+                    <button onClick={openContact} className="btn-glow">Book a Consultation</button>
+                </div>
+            </div>
         </main>
     );
 };

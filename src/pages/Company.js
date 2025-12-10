@@ -1,34 +1,36 @@
 import React from 'react';
 import { HeroVideoBackground } from '../components/ui';
-import { ClientJourney } from '../components';
 import '../styles/company.css';
 
 const Company = () => {
   const timeline = [
+
+
+
+    {
+      year: '2020',
+      title: 'Foundation',
+      description: 'ConPro.AI founded by Ashish and Dr. Sarah Chen, leveraging over 18 years of applied AI experience to democratize intelligent solutions.'
+    },
+    {
+      year: '2021',
+      title: 'First Major Client',
+      description: 'Secured partnership with MidAtlantic Health System, delivering $1.8M in annual savings through AI-powered prior authorization.'
+    },
+    {
+      year: '2023',
+      title: 'Market Expansion',
+      description: 'Expanded into financial services and retail sectors. Crossed 200 enterprise clients milestone.'
+    },
+    {
+      year: '2024',
+      title: 'Global Presence',
+      description: 'Opened offices in London and Singapore. Launched AI solutions in 12 additional industries.'
+    },
     {
       year: '2025',
-      title: 'Foundation',
-      description: 'ConPro.AI established by Ashish and Dr. Sarah Chen to democratize intelligent solutions.'
-    },
-    {
-      year: '2026',
-      title: 'First Major Client',
-      description: 'Targeting partnership with major health systems to deliver significant savings through AI-powered prior authorization.'
-    },
-    {
-      year: '2027',
-      title: 'Market Expansion',
-      description: 'Expansion into financial services and retail sectors. aiming for 200 enterprise clients milestone.'
-    },
-    {
-      year: '2028',
-      title: 'Global Presence',
-      description: 'Opening offices in strategic global locations. Launching AI solutions in additional industries.'
-    },
-    {
-      year: '2029',
       title: 'Industry Leader',
-      description: 'Targeting 500 clients and industry recognition as a top AI Innovator.'
+      description: 'Surpassed 500 clients, $12.5M+ in total client savings. Named "AI Innovator of the Year" by TechCrunch.'
     }
   ];
 
@@ -197,40 +199,38 @@ const Company = () => {
         <section className="company-story">
           <div className="container">
             <h2>Our Story</h2>
-            <div className="story-content">
-              <div className="story-image-column">
-                <div className="story-image-wrapper">
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format"
-                    alt="Ashish - Founder & CEO"
-                    className="story-image"
-                  />
-                </div>
-              </div>
-              <div className="story-text-column">
-                <p className="story-intro">
-                  ConPro.AI was born from a simple observation: while AI technology was advancing
-                  rapidly, most businesses couldn't effectively leverage it. Complex implementations,
-                  astronomical costs, and lack of domain expertise created a massive gap between
-                  AI's potential and its practical application.
-                </p>
-                <p className="story-intro">
-                  Our founder Ashish, along with Dr. Sarah Chen, saw an opportunity to bridge this gap.
-                  With over 18 years of experience in AI and enterprise transformation, they assembled a
-                  world-class team to build solutions that are practical, accessible, and results-driven.
-                </p>
-              </div>
-            </div>
+            <p className="story-intro">
+              ConPro.AI was born from a simple observation: while AI technology was advancing
+              rapidly, most businesses couldn't effectively leverage it. Complex implementations,
+              astronomical costs, and lack of domain expertise created a massive gap between
+              AI's potential and its practical application.
+            </p>
+            <p className="story-intro">
+              Our founder Ashish, along with Dr. Sarah Chen, saw an opportunity to bridge this gap.
+              With over 18 years of experience in AI and enterprise transformation, they assembled a
+              world-class team to build solutions that are practical, accessible, and results-driven.
+            </p>
           </div>
         </section>
       </div>
 
       <div>
-        <ClientJourney
-          title="Our Journey"
-          subtitle="From foundation to industry leadership"
-          steps={timeline}
-        />
+        <section className="company-timeline">
+          <div className="container">
+            <h2>Our Journey</h2>
+            <div className="timeline">
+              {timeline.map((item, index) => (
+                <div key={index} className="timeline-item">
+                  <div className="timeline-content">
+                    <div className="timeline-year">{item.year}</div>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
 
       <div>
