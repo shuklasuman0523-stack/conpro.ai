@@ -1,13 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.72dd455b.css",
-    "main.js": "/static/js/main.bbf0fcc5.js",
+    "main.css": "/static/css/main.4aacaa58.css",
+    "main.js": "/static/js/main.ee5567d1.js",
     "static/media/hero-abstract-flow.png": "/static/media/hero-abstract-flow.335bbf2e431f8d56aa64.png",
     "static/media/automation-healthcare.png": "/static/media/automation-healthcare.f44442385829e80f6581.png",
     "static/media/ai-trends-2025.png": "/static/media/ai-trends-2025.c771ed685dee8244d70b.png",
     "static/media/ai-chatbot-diagram.png": "/static/media/ai-chatbot-diagram.22065f057d4a8139cec7.png",
     "static/media/healthcare-expensive.png": "/static/media/healthcare-expensive.7767cdb22685d26d2494.png",
-    "static/media/Screen-Shot-2022-12-06-at-13.14.38.png": "/static/media/Screen-Shot-2022-12-06-at-13.14.38.3134fdd9e1998d55663e.png",
     "static/media/ebay.png": "/static/media/ebay.4f8bed732c8f0a586909.png",
     "static/media/nike-logo.png": "/static/media/nike-logo.954a0a5dfd6f20f5975c.png",
     "index.html": "/index.html",
@@ -21,11 +20,11 @@
     "static/media/amazon-logo.svg": "/static/media/amazon-logo.80bef6bf1ad336d16b75f29b569e76c6.svg",
     "static/media/aliexpress-logo.svg": "/static/media/aliexpress-logo.431940b5369dda8ca1e6566e2ee3ffb4.svg",
     "static/media/samsung-logo.svg": "/static/media/samsung-logo.2e7fcdc1c1c6c3c56b6b7991e1264bb8.svg",
-    "main.72dd455b.css.map": "/static/css/main.72dd455b.css.map",
-    "main.bbf0fcc5.js.map": "/static/js/main.bbf0fcc5.js.map"
+    "main.4aacaa58.css.map": "/static/css/main.4aacaa58.css.map",
+    "main.ee5567d1.js.map": "/static/js/main.ee5567d1.js.map"
   },
   "entrypoints": [
-    "static/css/main.72dd455b.css",
-    "static/js/main.bbf0fcc5.js"
+    "static/css/main.4aacaa58.css",
+    "static/js/main.ee5567d1.js"
   ]
 }
