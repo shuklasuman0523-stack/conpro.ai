@@ -55,34 +55,6 @@ const Company = () => {
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format',
       bio: 'Expert in machine learning systems and autonomous technology. Previously led engineering at Tesla Autopilot team. MS in Computer Science from Stanford University.',
       linkedin: '#'
-    },
-    {
-      name: 'Maya Patel',
-      role: 'Head of AI Research',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face&auto=format',
-      bio: 'PhD in Deep Learning from Carnegie Mellon. Renowned researcher in neural networks and reinforcement learning. Former principal scientist at Amazon AI.',
-      linkedin: '#'
-    },
-    {
-      name: 'Michael Torres',
-      role: 'VP of Operations',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format',
-      bio: 'MBA from Harvard Business School. 15+ years scaling enterprise software companies. Previously COO at DataRobot, growing revenue from $50M to $300M.',
-      linkedin: '#'
-    },
-    {
-      name: 'Jennifer Martinez',
-      role: 'Chief Medical Officer',
-      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face&auto=format',
-      bio: 'MD from Johns Hopkins, board-certified in Internal Medicine. Former Chief Innovation Officer at Kaiser Permanente, leading digital health transformation.',
-      linkedin: '#'
-    },
-    {
-      name: 'Robert Chen',
-      role: 'VP of Product',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face&auto=format',
-      bio: 'Former Director of Product at Salesforce Einstein AI. Led product teams that delivered AI solutions serving 50M+ users. BS in Computer Science from UC Berkeley.',
-      linkedin: '#'
     }
   ];
 

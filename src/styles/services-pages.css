@@ -134,22 +134,25 @@
 /* Workflow/Strategy Section */
 .workflow-steps {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: stretch;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 3rem;
   position: relative;
 }
 
 .workflow-step {
-  flex: 1;
+  flex: 1 1 200px;
+  max-width: 280px;
   text-align: center;
   background: var(--surface-card);
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .step-number {
