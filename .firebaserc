@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "bigbets",
+    "staging": "bigbets",
+    "bigbets": "bigbets"
+  },
+  "targets": {},
+  "etags": {}
+}

@@ -1,15 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ContactModal } from '../ui';
+import { ContactModal, AuthModal } from '../ui';
+import { auth } from '../../firebase/config';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState('login');
+  const [user, setUser] = useState(null);
+  const [showUserMenu, setShowUserMenu] = useState(false);
   const location = useLocation();
   const [isProductsOpen, setIsProductsOpen] = useState(false);
 
   const isActive = (path) => location.pathname === path;
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      setShowUserMenu(false);
+    } catch (error) {
+      console.error('Sign out error:', error);
+    }
+  };
+
+  const openAuthModal = (mode) => {
+    setAuthMode(mode);
+    setIsAuthModalOpen(true);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -176,6 +203,56 @@ const Header = () => {
             <li><Link to="/company" className={`nav-link ${isActive('/company') ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Company</Link></li>
           </ul>
           <div className="nav-contact-btn-wrapper">
+            {user ? (
+              <div className="user-menu-container">
+                <button 
+                  className="user-avatar-btn"
+                  onClick={() => setShowUserMenu(!showUserMenu)}
+                >
+                  {user.photoURL ? (
+                    <img src={user.photoURL} alt={user.displayName} />
+                  ) : (
+                    <div className="avatar-placeholder">
+                      {user.displayName?.charAt(0) || user.email?.charAt(0) || 'U'}
+                    </div>
+                  )}
+                </button>
+                {showUserMenu && (
+                  <div className="user-dropdown">
+                    <div className="user-info">
+                      <p className="user-name">{user.displayName || 'User'}</p>
+                      <p className="user-email">{user.email}</p>
+                    </div>
+                    <hr />
+                    <button onClick={handleSignOut} className="signout-btn">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                      </svg>
+                      Sign Out
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="auth-buttons">
+                <button
+                  onClick={() => openAuthModal('login')}
+                  className="btn btn-outline login-btn"
+                >
+                  Login
+                </button>
+                <button
+                  onClick={() => openAuthModal('signup')}
+                  className="btn btn-primary signup-btn"
+                >
+                  Sign Up
+                </button>
+              </div>
+            )}
+          </div>
+          <div className="nav-contact-btn-wrapper-mobile">
             <button
               onClick={() => {
                 setIsMenuOpen(false);
@@ -193,6 +270,12 @@ const Header = () => {
         <ContactModal
           isOpen={isContactModalOpen}
           onClose={() => setIsContactModalOpen(false)}
+        />
+
+        <AuthModal
+          isOpen={isAuthModalOpen}
+          onClose={() => setIsAuthModalOpen(false)}
+          initialMode={authMode}
         />
 
         {/* Hamburger menu button */}
