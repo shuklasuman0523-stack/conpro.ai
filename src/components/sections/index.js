@@ -11,3 +11,4 @@ export { default as Contact } from './Contact';
 export { default as Resources } from './Resources';
 export { default as WhyWorkWithUs } from './WhyWorkWithUs';
 export { default as VideoUpload } from './VideoUpload';
+export { default as VideoUploadFirebase } from './VideoUploadFirebase';
